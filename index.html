@@ -1,0 +1,2040 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ruta W · Comunidad de Barberos · Cali</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --w-orange: #FF6900;
+    --w-orange-dark: #E05500;
+    --w-orange-light: #FF8833;
+    --w-blue: #00B1BB;
+    --w-blue-dark: #009AA3;
+    --w-blue-light: #26C4CC;
+    --w-white: #FFFFFF;
+    --w-bg: #08080F;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--w-bg);
+    color: var(--w-white);
+    overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: rgba(255,105,0,0.2); border-radius: 2px; }
+
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+  /* ── Nav ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(8,8,15,0.9); backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255,105,0,0.08);
+    padding: 14px 0;
+  }
+
+  nav .container {
+    display: flex; align-items: center; justify-content: space-between;
+  }
+
+  nav .brand { display: flex; align-items: center; gap: 8px; }
+
+  nav .brand-mark { display: flex; align-items: center; }
+  nav .brand-mark img { height: 28px; width: auto; display: block; }
+
+  nav .brand-text { display: flex; align-items: center; gap: 6px; font-size: 15px; font-weight: 700; letter-spacing: -0.3px; }
+  nav .brand-text .banco-label { font-size: 10px; font-weight: 400; color: rgba(255,255,255,0.25); text-transform: uppercase; letter-spacing: 0.5px; }
+  nav .brand-text .sep { width: 1px; height: 16px; background: rgba(255,255,255,0.08); }
+
+  nav .nav-links { display: flex; gap: 24px; align-items: center; }
+
+  nav .nav-links a {
+    color: rgba(255,255,255,0.4); text-decoration: none;
+    font-size: 13px; font-weight: 500; transition: color 0.3s;
+  }
+
+  nav .nav-links a:hover { color: var(--w-white); }
+
+  nav .btn {
+    background: rgba(255,105,0,0.2); color: var(--w-white);
+    padding: 8px 20px; border-radius: 100px; font-size: 12px;
+    font-weight: 600; border: 1px solid rgba(255,105,0,0.3);
+    cursor: pointer; transition: all 0.3s; text-decoration: none;
+  }
+
+  nav .btn:hover { background: rgba(255,105,0,0.35); }
+
+  .mobile-toggle { display: none; background: none; border: none; color: #E8E6E3; font-size: 24px; cursor: pointer; }
+
+  /* ── Hero ── */
+  #hero {
+    min-height: 100vh; display: flex; align-items: center;
+    padding: 120px 0 80px;
+    background: radial-gradient(ellipse at 30% 50%, rgba(255,105,0,0.05) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 30%, rgba(0,177,187,0.04) 0%, transparent 50%);
+  }
+
+  #hero .container {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+  }
+
+  #hero .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(0,177,187,0.15); border: 1px solid rgba(0,177,187,0.2);
+    padding: 6px 16px; border-radius: 100px;
+    font-size: 12px; color: rgba(255,255,255,0.5); margin-bottom: 20px;
+  }
+
+  #hero .hero-badge .dot {
+    width: 5px; height: 5px; border-radius: 50%; background: var(--w-orange);
+    animation: pulse-dot 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.4); }
+  }
+
+  #hero h1 {
+    font-size: 52px; font-weight: 800; line-height: 1.1;
+    letter-spacing: -1.5px; margin-bottom: 20px;
+  }
+
+  #hero h1 .highlight { background: linear-gradient(135deg, var(--w-orange), var(--w-white)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+  #hero p {
+    font-size: 17px; line-height: 1.7; color: rgba(255,255,255,0.45);
+    margin-bottom: 32px; max-width: 480px;
+  }
+
+  #hero .hero-actions { display: flex; gap: 12px; }
+
+  #hero .hero-actions .btn-primary {
+    background: linear-gradient(135deg, var(--w-blue), var(--w-orange));
+    color: #fff; padding: 14px 32px; border-radius: 100px;
+    font-weight: 700; font-size: 14px; border: none; cursor: pointer;
+    transition: transform 0.3s; text-decoration: none; display: inline-flex;
+    align-items: center; gap: 8px;
+  }
+
+  #hero .hero-actions .btn-primary:hover { transform: scale(1.03); }
+
+  #hero .hero-actions .btn-secondary {
+    background: rgba(0,177,187,0.15); color: var(--w-white);
+    padding: 14px 28px; border-radius: 100px; font-weight: 500;
+    font-size: 14px; border: 1px solid rgba(0,177,187,0.25);
+    cursor: pointer; transition: all 0.3s; text-decoration: none;
+  }
+
+  #hero .hero-actions .btn-secondary:hover { background: rgba(0,177,187,0.25); }
+
+  #hero .hero-stats {
+    display: flex; gap: 32px; margin-top: 40px;
+    padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.04);
+  }
+
+  #hero .hero-stats .num {
+    font-size: 28px; font-weight: 700;
+    background: linear-gradient(180deg, var(--w-white), rgba(255,255,255,0.4));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    line-height: 1;
+  }
+
+  #hero .hero-stats .num.orange { background: linear-gradient(180deg, var(--w-orange), var(--w-orange-dark)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  #hero .hero-stats .num.blue { background: linear-gradient(180deg, var(--w-blue-light), var(--w-blue)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+  #hero .hero-stats .lbl {
+    font-size: 12px; color: rgba(255,255,255,0.25); margin-top: 4px;
+  }
+
+  #hero .hero-visual {
+    position: relative;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  #hero .hero-card {
+    background: rgba(14,14,26,0.8); border: 1px solid rgba(255,255,255,0.04);
+    border-radius: 20px; padding: 32px; width: 100%; max-width: 440px;
+    backdrop-filter: blur(10px);
+  }
+
+  #hero .hero-card .card-label {
+    font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px;
+    color: rgba(255,255,255,0.25); margin-bottom: 16px;
+  }
+
+  #hero .hero-card .mini-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;
+  }
+
+  #hero .hero-card .mini-actor {
+    text-align: center; padding: 12px 8px;
+    background: rgba(255,255,255,0.02); border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.03); transition: all 0.3s;
+  }
+
+  #hero .hero-card .mini-actor:hover { background: rgba(0,177,187,0.08); border-color: rgba(0,177,187,0.15); }
+
+  #hero .hero-card .mini-actor .icon { font-size: 22px; margin-bottom: 4px; }
+  #hero .hero-card .mini-actor .name { font-size: 9px; color: rgba(255,255,255,0.3); }
+
+  /* ── Sections ── */
+  section { padding: 100px 0; }
+
+  .section-label {
+    font-size: 11px; text-transform: uppercase; letter-spacing: 2.5px;
+    color: rgba(255,255,255,0.25); margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-size: 36px; font-weight: 700; letter-spacing: -0.5px;
+    margin-bottom: 16px; line-height: 1.2;
+  }
+
+  .section-title .orange { color: var(--w-orange); }
+  .section-title .blue { color: var(--w-blue-light); }
+
+  .section-sub {
+    font-size: 16px; color: rgba(255,255,255,0.35); line-height: 1.7;
+    max-width: 600px; margin-bottom: 48px;
+  }
+
+  /* ── Ecosystem Section ── */
+  #ecosystem {
+    background: radial-gradient(ellipse at 50% 0%, rgba(0,177,187,0.03) 0%, transparent 60%);
+  }
+
+  #ecosystem .eco-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+  }
+
+  .eco-card {
+    background: rgba(14,14,26,0.6); border: 1px solid rgba(255,255,255,0.03);
+    border-radius: 16px; padding: 20px; transition: all 0.3s;
+    cursor: default;
+  }
+
+  .eco-card:hover { border-color: rgba(0,177,187,0.15); background: rgba(14,14,26,0.8); }
+
+  .eco-card.highlight { border-color: rgba(255,105,0,0.2); background: rgba(0,177,187,0.06); }
+
+  .eco-card .eco-icon {
+    width: 40px; height: 40px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; margin-bottom: 12px;
+  }
+
+  .eco-card h4 { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+
+  .eco-card .eco-role {
+    font-size: 10px; text-transform: uppercase; letter-spacing: 1px;
+    color: rgba(255,255,255,0.2); margin-bottom: 8px;
+  }
+
+  .eco-card p {
+    font-size: 12px; line-height: 1.6; color: rgba(255,255,255,0.35);
+  }
+
+  .eco-card .eco-links {
+    display: flex; flex-wrap: wrap; gap: 4px; margin-top: 10px;
+  }
+
+  .eco-card .eco-links span {
+    font-size: 9px; padding: 2px 8px;
+    background: rgba(0,177,187,0.1); border-radius: 100px;
+    color: rgba(255,255,255,0.35);
+  }
+
+  .eco-card .eco-value {
+    margin-top: 10px; padding-top: 10px;
+    border-top: 1px solid rgba(255,255,255,0.03);
+    font-size: 11px; color: var(--w-orange); line-height: 1.5;
+  }
+
+  /* ── Mapa de Cali ── */
+  #mapa-cali {
+    background: radial-gradient(ellipse at 50% 0%, rgba(0,177,187,0.03) 0%, transparent 60%);
+  }
+
+  .mapa-layout {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start;
+  }
+
+  .mapa-svg-container {
+    background: rgba(14,14,26,0.6); border: 1px solid rgba(255,255,255,0.04);
+    border-radius: 20px; padding: 24px; position: relative;
+  }
+
+  .mapa-svg-container svg {
+    width: 100%; height: auto;
+  }
+
+  .mapa-zone {
+    cursor: pointer; transition: opacity 0.3s;
+  }
+
+  .mapa-zone:hover { opacity: 0.8; }
+
+  .mapa-zone.active path,
+  .mapa-zone.active .zone-shape {
+    stroke-width: 3;
+  }
+
+  .mapa-legend {
+    display: flex; flex-wrap: wrap; gap: 12px; margin-top: 16px; justify-content: center;
+  }
+
+  .mapa-legend-item {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 12px; color: rgba(255,255,255,0.5); cursor: pointer;
+    padding: 6px 12px; border-radius: 8px;
+    background: rgba(0,177,187,0.08); border: 1px solid transparent;
+    transition: all 0.3s;
+  }
+
+  .mapa-legend-item:hover { border-color: rgba(0,177,187,0.2); }
+  .mapa-legend-item.active { border-color: var(--w-orange); background: rgba(0,177,187,0.15); }
+
+  .mapa-legend-item .dot {
+    width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0;
+  }
+
+  .mapa-results {
+    min-height: 400px;
+  }
+
+  .mapa-results .zone-header {
+    display: flex; align-items: center; gap: 12px; margin-bottom: 20px;
+  }
+
+  .mapa-results .zone-header .zh-icon {
+    width: 44px; height: 44px; border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+  }
+
+  .mapa-results .zone-header h3 { font-size: 20px; font-weight: 700; }
+  .mapa-results .zone-header .zh-count {
+    font-size: 13px; color: rgba(255,255,255,0.3);
+    margin-left: auto;
+  }
+
+  .centros-grid {
+    display: grid; gap: 12px;
+  }
+
+  .centro-card {
+    display: grid; grid-template-columns: auto 1fr auto; gap: 14px;
+    align-items: center;
+    background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.04);
+    border-radius: 14px; padding: 14px 18px;
+    transition: all 0.3s;
+  }
+
+  .centro-card:hover { background: rgba(0,177,187,0.06); border-color: rgba(0,177,187,0.12); }
+
+  .centro-card .cc-icon {
+    width: 42px; height: 42px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; flex-shrink: 0;
+  }
+
+  .centro-card .cc-info .cc-name {
+    font-size: 15px; font-weight: 600; margin-bottom: 2px;
+  }
+
+  .centro-card .cc-info .cc-type {
+    font-size: 12px; color: rgba(255,255,255,0.3);
+  }
+
+  .centro-card .cc-rating {
+    text-align: right; flex-shrink: 0;
+  }
+
+  .centro-card .cc-rating .cc-stars {
+    font-size: 13px; color: var(--w-orange); letter-spacing: 1px;
+  }
+
+  .centro-card .cc-rating .cc-score {
+    font-size: 11px; color: rgba(255,255,255,0.3); margin-top: 1px;
+  }
+
+  .centro-card .cc-rating .cc-score strong {
+    color: var(--w-white); font-size: 14px;
+  }
+
+  .mapa-placeholder {
+    text-align: center; padding: 80px 20px;
+    background: rgba(14,14,26,0.4); border-radius: 20px;
+    border: 1px dashed rgba(255,255,255,0.04);
+  }
+
+  .mapa-placeholder .mph-icon { font-size: 48px; margin-bottom: 16px; opacity: 0.3; }
+  .mapa-placeholder h4 { font-size: 18px; color: rgba(255,255,255,0.3); margin-bottom: 8px; }
+  .mapa-placeholder p { font-size: 13px; color: rgba(255,255,255,0.15); }
+
+  /* ── Reviews ── */
+  .centro-card { cursor: pointer; }
+  .centro-card .cc-reviews-toggle {
+    grid-column: 1 / -1; padding-top: 8px; margin-top: 8px;
+    border-top: 1px solid rgba(255,255,255,0.04);
+    display: none;
+  }
+  .centro-card .cc-reviews-toggle.open { display: block; }
+  .centro-card .cc-reviews-toggle .toggle-hint {
+    font-size: 11px; color: rgba(255,105,0,0.35); cursor: pointer;
+    display: flex; align-items: center; gap: 4px; justify-content: center;
+    padding: 4px 0; transition: color 0.3s;
+  }
+  .centro-card .cc-reviews-toggle .toggle-hint:hover { color: rgba(255,105,0,0.6); }
+
+  .review-item {
+    display: flex; gap: 10px; padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.03);
+    align-items: flex-start;
+  }
+  .review-item:last-child { border-bottom: none; }
+  .review-item .rv-avatar {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: rgba(255,255,255,0.03);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; flex-shrink: 0;
+  }
+  .review-item .rv-body { flex: 1; min-width: 0; }
+  .review-item .rv-body .rv-head {
+    display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+    margin-bottom: 3px;
+  }
+  .review-item .rv-body .rv-head .rv-name {
+    font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.7);
+  }
+  .review-item .rv-body .rv-head .rv-date {
+    font-size: 10px; color: rgba(255,255,255,0.2);
+  }
+  .review-item .rv-body .rv-head .rv-stars {
+    font-size: 10px; color: var(--w-orange); margin-left: auto;
+  }
+  .review-item .rv-body .rv-text {
+    font-size: 12px; line-height: 1.5;
+    color: rgba(255,255,255,0.4); font-style: italic;
+  }
+  .review-item .rv-body .rv-text::before { content: ""; }
+  .review-item .rv-body .rv-text::after { content: ""; }
+
+  /* ── Appointment Section ── */
+  #agenda {
+    background: radial-gradient(ellipse at 50% 100%, rgba(255,105,0,0.04) 0%, transparent 60%);
+  }
+
+  .appointment-layout {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start;
+  }
+
+  .appointment-layout .info h3 {
+    font-size: 14px; font-weight: 600; color: var(--w-orange); margin-bottom: 8px;
+  }
+
+  .appointment-layout .info p {
+    font-size: 14px; line-height: 1.8; color: rgba(255,255,255,0.35);
+    margin-bottom: 24px;
+  }
+
+  .appointment-layout .info .benefits {
+    display: flex; flex-direction: column; gap: 12px;
+  }
+
+  .appointment-layout .info .benefit {
+    display: flex; gap: 12px; align-items: flex-start;
+  }
+
+  .appointment-layout .info .benefit .check {
+    width: 20px; height: 20px; border-radius: 50%;
+    background: rgba(0,177,187,0.15); color: var(--w-blue-light);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; flex-shrink: 0; margin-top: 2px;
+  }
+
+  .appointment-layout .info .benefit div { font-size: 13px; line-height: 1.5; color: rgba(255,255,255,0.45); }
+  .appointment-layout .info .benefit div strong { color: rgba(255,255,255,0.7); }
+
+  /* ── Booking Form ── */
+  .booking-card {
+    background: rgba(14,14,26,0.8); border: 1px solid rgba(255,255,255,0.04);
+    border-radius: 20px; padding: 32px; backdrop-filter: blur(10px);
+  }
+
+  .booking-card .step-indicators {
+    display: flex; gap: 8px; margin-bottom: 28px;
+  }
+
+  .booking-card .step-indicators .step-dot {
+    flex: 1; height: 3px; border-radius: 2px;
+    background: rgba(255,255,255,0.06); transition: background 0.4s;
+  }
+
+  .booking-card .step-indicators .step-dot.active { background: var(--w-orange); }
+  .booking-card .step-indicators .step-dot.done { background: var(--w-blue-light); }
+
+  .booking-card .step-label {
+    font-size: 12px; color: rgba(255,255,255,0.3); margin-bottom: 20px;
+  }
+
+  .booking-card .step-label strong { color: var(--w-orange); }
+
+  .booking-step { display: none; }
+  .booking-step.active { display: block; }
+
+  .booking-step h4 {
+    font-size: 18px; font-weight: 600; margin-bottom: 20px;
+  }
+
+  .service-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+  }
+
+  .service-option {
+    background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.04);
+    border-radius: 12px; padding: 16px; cursor: pointer;
+    transition: all 0.3s; text-align: center;
+  }
+
+  .service-option:hover { border-color: rgba(255,105,0,0.2); background: rgba(0,177,187,0.06); }
+  .service-option.selected { border-color: var(--w-orange); background: rgba(0,177,187,0.12); }
+
+  .service-option .s-icon { font-size: 28px; margin-bottom: 8px; }
+  .service-option .s-name { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+  .service-option .s-price { font-size: 16px; font-weight: 700; color: var(--w-orange); }
+
+  .barber-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+  }
+
+  .barber-option {
+    background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.04);
+    border-radius: 12px; padding: 16px; cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .barber-option:hover { border-color: rgba(0,177,187,0.2); background: rgba(0,177,187,0.06); }
+  .barber-option.selected { border-color: var(--w-orange); background: rgba(0,177,187,0.12); }
+
+  .barber-option .b-head { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+  .barber-option .b-avatar {
+    width: 36px; height: 36px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+  }
+  .barber-option .b-name { font-size: 14px; font-weight: 600; }
+  .barber-option .b-specialty { font-size: 11px; color: rgba(255,255,255,0.3); }
+  .barber-option .b-stars { font-size: 11px; color: var(--w-orange); margin-top: 4px; }
+
+  .date-time-row {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+  }
+
+  .booking-card label {
+    display: block; font-size: 12px; color: rgba(255,255,255,0.35);
+    margin-bottom: 6px; font-weight: 500;
+  }
+
+  .booking-card input, .booking-card select {
+    width: 100%; padding: 12px 16px;
+    background: rgba(0,177,187,0.08); border: 1px solid rgba(0,177,187,0.15);
+    border-radius: 10px; color: var(--w-white); font-family: 'Inter', sans-serif;
+    font-size: 14px; outline: none; transition: border 0.3s;
+  }
+
+  .booking-card input:focus, .booking-card select:focus {
+    border-color: var(--w-orange);
+  }
+
+  .booking-card select option { background: #0A1A2E; color: var(--w-white); }
+
+  .booking-card .btn-next, .booking-card .btn-confirm {
+    width: 100%; padding: 14px; margin-top: 20px;
+    border-radius: 12px; border: none; font-weight: 600;
+    font-size: 14px; cursor: pointer; transition: all 0.3s;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .booking-card .btn-next {
+    background: rgba(255,105,0,0.2); color: var(--w-white);
+    border: 1px solid rgba(255,105,0,0.3);
+  }
+
+  .booking-card .btn-next:hover { background: rgba(255,105,0,0.3); }
+
+  .booking-card .btn-confirm {
+    background: linear-gradient(135deg, var(--w-blue), var(--w-orange));
+    color: #fff;
+  }
+
+  .booking-card .btn-confirm:hover { transform: scale(1.01); }
+
+  .booking-card .btn-back {
+    background: none; border: none; color: rgba(255,255,255,0.3);
+    font-size: 12px; cursor: pointer; padding: 8px 0;
+    font-family: 'Inter', sans-serif; transition: color 0.3s;
+  }
+
+  .booking-card .btn-back:hover { color: rgba(255,255,255,0.6); }
+
+  /* ── Confirmation ── */
+  #confirmation {
+    text-align: center; padding: 20px 0;
+  }
+
+  #confirmation .conf-icon { font-size: 56px; margin-bottom: 16px; }
+  #confirmation h4 { font-size: 22px; margin-bottom: 8px; color: var(--w-blue-light); }
+  #confirmation p { font-size: 14px; color: rgba(255,255,255,0.35); line-height: 1.6; margin-bottom: 16px; }
+
+  #confirmation .conf-details {
+    background: rgba(255,255,255,0.02); border-radius: 12px;
+    padding: 16px; margin-bottom: 20px;
+  }
+
+  #confirmation .conf-details .row {
+    display: flex; justify-content: space-between; padding: 8px 0;
+    font-size: 13px; border-bottom: 1px solid rgba(255,255,255,0.03);
+  }
+
+  #confirmation .conf-details .row:last-child { border-bottom: none; }
+  #confirmation .conf-details .row .lbl { color: rgba(255,255,255,0.3); }
+  #confirmation .conf-details .row .val { color: var(--w-white); font-weight: 500; }
+
+  #confirmation .conf-impact {
+    background: rgba(0,177,187,0.06); border: 1px solid rgba(0,177,187,0.12);
+    border-radius: 12px; padding: 16px; margin-top: 16px;
+  }
+
+  #confirmation .conf-impact h5 {
+    font-size: 11px; text-transform: uppercase; letter-spacing: 1px;
+    color: var(--w-blue-light); margin-bottom: 8px;
+  }
+
+  #confirmation .conf-impact p {
+    font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.6;
+  }
+
+  #confirmation .btn-reset {
+    background: rgba(0,177,187,0.1); border: 1px solid rgba(0,177,187,0.15);
+    color: rgba(255,255,255,0.5); padding: 12px 24px; border-radius: 100px;
+    margin-top: 16px; cursor: pointer; font-family: 'Inter', sans-serif;
+    font-size: 13px; transition: all 0.3s;
+  }
+
+  #confirmation .btn-reset:hover { background: rgba(0,177,187,0.2); }
+
+  /* ── Community Section ── */
+  #comunidad {
+    background: radial-gradient(ellipse at 50% 50%, rgba(0,177,187,0.03) 0%, transparent 60%);
+  }
+
+  .community-showcase {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;
+  }
+
+  .community-showcase .comm-text h3 {
+    font-size: 14px; font-weight: 600; color: var(--w-blue-light); margin-bottom: 12px;
+  }
+
+  .community-showcase .comm-text p {
+    font-size: 14px; line-height: 1.8; color: rgba(255,255,255,0.35);
+    margin-bottom: 24px;
+  }
+
+  .community-showcase .comm-benefits {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+  }
+
+  .comm-benefit {
+    background: rgba(0,177,187,0.06); border: 1px solid rgba(0,177,187,0.1);
+    border-radius: 12px; padding: 16px;
+  }
+
+  .comm-benefit .cb-icon { font-size: 20px; margin-bottom: 8px; }
+  .comm-benefit h5 { font-size: 13px; font-weight: 600; margin-bottom: 4px; }
+  .comm-benefit p { font-size: 11px; color: rgba(255,255,255,0.3); line-height: 1.5; }
+
+  .community-showcase .comm-visual {
+    background: rgba(14,14,26,0.6); border: 1px solid rgba(255,255,255,0.03);
+    border-radius: 20px; padding: 28px;
+  }
+
+  .community-showcase .comm-visual .comm-network {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+  }
+
+  .comm-member {
+    text-align: center; padding: 16px 8px;
+    background: rgba(255,255,255,0.02); border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.03);
+  }
+
+  .comm-member .cm-avatar { font-size: 24px; margin-bottom: 6px; }
+  .comm-member .cm-name { font-size: 11px; font-weight: 600; }
+  .comm-member .cm-role { font-size: 9px; color: rgba(255,255,255,0.25); }
+  .comm-member .cm-badge {
+    display: inline-block; margin-top: 6px;
+    font-size: 8px; padding: 2px 8px; border-radius: 100px;
+    background: rgba(0,177,187,0.15); color: var(--w-blue-light);
+  }
+
+  .comm-member .cm-badge.aliado { background: rgba(255,105,0,0.12); color: var(--w-orange); }
+  .comm-member.central { border-color: var(--w-orange); background: rgba(0,177,187,0.08); }
+  .comm-member { cursor: pointer; }
+  .comm-member:hover { border-color: var(--w-orange); background: rgba(0,177,187,0.1); }
+
+  /* ── Member Detail Modal ── */
+  .modal-overlay {
+    position: fixed; inset: 0; z-index: 200;
+    background: rgba(0,0,0,0.7); backdrop-filter: blur(4px);
+    display: none; align-items: center; justify-content: center;
+    padding: 20px;
+  }
+  .modal-overlay.open { display: flex; }
+  .modal-card {
+    background: rgba(14,14,26,0.95); border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 20px; padding: 32px; max-width: 420px; width: 100%;
+    position: relative; animation: modalIn 0.25s ease-out;
+  }
+  @keyframes modalIn { from { opacity:0; transform:scale(0.95) translateY(10px); } to { opacity:1; transform:scale(1) translateY(0); } }
+  .modal-card .modal-close {
+    position: absolute; top: 12px; right: 16px;
+    background: none; border: none; color: rgba(255,255,255,0.3);
+    font-size: 20px; cursor: pointer; font-family: 'Inter', sans-serif;
+    transition: color 0.3s;
+  }
+  .modal-card .modal-close:hover { color: var(--w-white); }
+  .modal-card .modal-photo {
+    width: 64px; height: 64px; border-radius: 16px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 36px; margin-bottom: 16px;
+  }
+  .modal-card .modal-name { font-size: 20px; font-weight: 700; margin-bottom: 2px; }
+  .modal-card .modal-role { font-size: 13px; color: rgba(255,255,255,0.3); margin-bottom: 16px; }
+  .modal-card .modal-stats {
+    display: flex; gap: 16px; margin-bottom: 16px;
+    padding: 12px 16px; background: rgba(255,255,255,0.02); border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.04);
+  }
+  .modal-card .modal-stats .ms-item { flex: 1; text-align: center; }
+  .modal-card .modal-stats .ms-item .ms-val { font-size: 20px; font-weight: 700; color: var(--w-orange); }
+  .modal-card .modal-stats .ms-item .ms-lbl { font-size: 10px; color: rgba(255,255,255,0.3); margin-top: 2px; }
+  .modal-card .modal-address {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 13px; color: rgba(255,255,255,0.4);
+    padding: 12px 16px; background: rgba(0,177,187,0.06); border-radius: 12px;
+    border: 1px solid rgba(0,177,187,0.1); margin-bottom: 12px;
+  }
+
+  /* ── Rating Explanation Section ── */
+  #rating-explanation {
+    background: radial-gradient(ellipse at 50% 0%, rgba(255,105,0,0.03) 0%, transparent 60%);
+  }
+  .rating-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+  }
+  .rating-card {
+    background: rgba(14,14,26,0.6); border: 1px solid rgba(255,255,255,0.03);
+    border-radius: 16px; padding: 24px; text-align: center;
+    transition: all 0.3s;
+  }
+  .rating-card:hover { border-color: rgba(0,177,187,0.15); }
+  .rating-card .rc-stars { font-size: 28px; margin-bottom: 12px; }
+  .rating-card .rc-stars .dim { opacity: 0.15; }
+  .rating-card .rc-label { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+  .rating-card .rc-desc { font-size: 12px; color: rgba(255,255,255,0.35); line-height: 1.6; }
+  .rating-card .rc-bar {
+    height: 4px; border-radius: 2px; margin: 8px auto 0;
+    max-width: 120px;
+  }
+
+  /* ── Join Community Modal ── */
+  .join-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: linear-gradient(135deg, var(--w-blue), var(--w-orange));
+    color: #fff; padding: 14px 32px; border-radius: 100px;
+    font-weight: 700; font-size: 15px; border: none; cursor: pointer;
+    font-family: 'Inter', sans-serif; transition: transform 0.3s;
+    margin-top: 32px;
+  }
+  .join-btn:hover { transform: scale(1.03); }
+  .req-list { list-style: none; padding: 0; margin: 16px 0; }
+  .req-list li {
+    display: flex; align-items: flex-start; gap: 10px;
+    padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.03);
+    font-size: 14px; color: rgba(255,255,255,0.45);
+  }
+  .req-list li:last-child { border-bottom: none; }
+  .req-list li .req-check {
+    width: 20px; height: 20px; border-radius: 50%;
+    background: rgba(0,177,187,0.15); color: var(--w-blue-light);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; flex-shrink: 0; margin-top: 1px;
+  }
+  .req-list li strong { color: var(--w-white); }
+
+  /* ── Stats Section ── */
+  #impact {
+    background: linear-gradient(180deg, rgba(0,177,187,0.03) 0%, transparent 100%);
+  }
+
+  .impact-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+  }
+
+  .impact-card {
+    text-align: center; padding: 32px 16px;
+    background: rgba(14,14,26,0.4); border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.03);
+  }
+
+  .impact-card .ic-num {
+    font-size: 36px; font-weight: 800;
+    background: linear-gradient(180deg, var(--w-orange), var(--w-blue-light));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    line-height: 1; margin-bottom: 8px;
+  }
+
+  .impact-card .ic-num.blue { background: linear-gradient(180deg, var(--w-blue-light), var(--w-blue)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+  .impact-card .ic-label {
+    font-size: 12px; color: rgba(255,255,255,0.3); line-height: 1.4;
+  }
+
+  /* ── Directory Section ── */
+  #directorio {
+    background: radial-gradient(ellipse at 30% 50%, rgba(0,177,187,0.03) 0%, transparent 60%);
+  }
+
+  .dir-tabs {
+    display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;
+    margin-bottom: 40px;
+  }
+
+  .dir-tab {
+    padding: 10px 20px; border-radius: 100px; cursor: pointer;
+    font-size: 13px; font-family: 'Inter', sans-serif; font-weight: 500;
+    border: 1px solid rgba(0,177,187,0.15);
+    background: rgba(0,177,187,0.05); color: rgba(255,255,255,0.4);
+    transition: all 0.3s;
+  }
+
+  .dir-tab:hover { background: rgba(0,177,187,0.1); color: rgba(255,255,255,0.6); }
+  .dir-tab.active { background: rgba(0,177,187,0.2); border-color: var(--w-orange); color: var(--w-orange); }
+
+  .dir-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+    min-height: 200px;
+  }
+
+  .dir-grid.hidden { display: none; }
+
+  .dir-card {
+    background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.04);
+    border-radius: 16px; padding: 16px;
+    transition: all 0.3s;
+  }
+
+  .dir-card:hover { background: rgba(0,177,187,0.06); border-color: rgba(0,177,187,0.12); }
+
+  .dir-card .dc-head {
+    display: flex; align-items: center; gap: 12px; margin-bottom: 10px;
+  }
+
+  .dir-card .dc-avatar {
+    width: 40px; height: 40px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; flex-shrink: 0;
+  }
+
+  .dir-card .dc-name { font-weight: 600; font-size: 14px; color: var(--w-white); }
+  .dir-card .dc-role { font-size: 12px; color: rgba(255,255,255,0.3); }
+
+  .dir-card .dc-detail {
+    font-size: 12px; color: rgba(255,255,255,0.3);
+    display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+    padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.03);
+  }
+
+  .dir-card .dc-detail span { display: flex; align-items: center; gap: 4px; }
+
+  .dir-card .dc-tag {
+    font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+    padding: 2px 8px; border-radius: 100px; display: inline-block;
+  }
+
+  .dir-card .dc-tag.gold { background: rgba(255,105,0,0.12); color: var(--w-orange); }
+  .dir-card .dc-tag.teal { background: rgba(0,177,187,0.12); color: var(--w-blue-light); }
+  .dir-card .dc-tag.purple { background: rgba(0,177,187,0.1); color: var(--w-blue-light); }
+
+  .dir-empty {
+    grid-column: 1 / -1; text-align: center;
+    padding: 60px 20px; color: rgba(255,255,255,0.2); font-size: 14px;
+  }
+
+  /* ── Footer ── */
+  footer {
+    border-top: 1px solid rgba(255,255,255,0.03);
+    padding: 40px 0; text-align: center;
+  }
+
+  footer p { font-size: 12px; color: rgba(255,255,255,0.15); }
+
+  /* ── Responsive ── */
+  @media (max-width: 768px) {
+    #hero .container { grid-template-columns: 1fr; gap: 40px; }
+    #hero h1 { font-size: 32px; }
+    #hero .hero-stats { gap: 20px; flex-wrap: wrap; }
+    #hero .hero-stats .num { font-size: 22px; }
+    .eco-grid { grid-template-columns: repeat(2, 1fr); }
+    .mapa-layout { grid-template-columns: 1fr; }
+    .appointment-layout { grid-template-columns: 1fr; }
+    .community-showcase { grid-template-columns: 1fr; }
+    .impact-grid { grid-template-columns: repeat(2, 1fr); }
+    .dir-grid { grid-template-columns: repeat(2, 1fr); }
+    .section-title { font-size: 26px; }
+    nav .nav-links { display: none; }
+    .mobile-toggle { display: block; }
+    nav .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 60px; left: 0; right: 0; background: rgba(8,8,15,0.95); padding: 20px; border-bottom: 1px solid rgba(0,177,187,0.1); }
+    .service-grid, .barber-grid { grid-template-columns: 1fr; }
+    .date-time-row { grid-template-columns: 1fr; }
+    .comm-benefits { grid-template-columns: 1fr; }
+    .community-showcase .comm-visual .comm-network { grid-template-columns: repeat(2, 1fr); }
+    .centro-card { grid-template-columns: 1fr; text-align: center; }
+    .centro-card .cc-rating { text-align: center; }
+    .rating-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <div class="brand">
+      <div class="brand-mark"><img src="https://storage.googleapis.com/strapi-banco-w/isologo_dd01ce369b/isologo_dd01ce369b.svg" alt="Banco W" onerror="this.style.display='none'"></div>
+      <div class="brand-text">
+        <span style="font-weight:800;background:linear-gradient(135deg,var(--w-orange),var(--w-blue-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent">Ruta W</span>
+        <span class="sep"></span>
+        <span class="banco-label">Banco W</span>
+      </div>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="#comunidad">Comunidad</a>
+      <a href="#mapa-cali">Mapa Cali</a>
+      <a href="#ecosystem">Ecosistema</a>
+      <a href="#agenda">Agenda</a>
+      <a href="#directorio">Directorio</a>
+      <a href="#impact" class="btn">Impacto</a>
+    </div>
+    <button class="mobile-toggle" id="mobileToggle">☰</button>
+  </div>
+</nav>
+
+<section id="comunidad">
+  <div class="container">
+    <div class="section-label">🔄 Comunidad de Barberos Aliados</div>
+    <h2 class="section-title">Una red que <span class="orange">crece contigo</span></h2>
+    <p class="section-sub">Microempresarios vinculados al Banco W que se conectan para comprar mejor, aprender más rápido y crecer más fuertes.</p>
+    <div class="community-showcase">
+      <div class="comm-text">
+        <h3>Beneficios de ser aliado</h3>
+        <p>Banco W articula la comunidad con beneficios exclusivos para barberos que quieren crecer y profesionalizarse.</p>
+        <div class="comm-benefits">
+          <div class="comm-benefit"><div class="cb-icon">📦</div><h5>Compras conjuntas</h5><p>Ahorra 15–25% en insumos comprando con la comunidad.</p></div>
+          <div class="comm-benefit"><div class="cb-icon">🔄</div><h5>Referidos cruzados</h5><p>Recibe clientes de otros barberos aliados cuando están llenos.</p></div>
+          <div class="comm-benefit"><div class="cb-icon">🎓</div><h5>Capacitación gratuita</h5><p>Accede a talleres y certificaciones avaladas por el SENA y gremios.</p></div>
+          <div class="comm-benefit"><div class="cb-icon">🏦</div><h5>Créditos preferenciales</h5><p>Tasas especiales para miembros de la comunidad Ruta W.</p></div>
+          <div class="comm-benefit"><div class="cb-icon">⭐</div><h5>Membresía W</h5><p>Seguros, créditos blandos y beneficios exclusivos para aliados.</p></div>
+          <div class="comm-benefit"><div class="cb-icon">📱</div><h5>App de comunidad</h5><p>Red social privada para compartir técnicas, tips y oportunidades.</p></div>
+        </div>
+      </div>
+      <div class="comm-visual">
+        <h5 style="font-size:12px;color:rgba(255,255,255,0.3);margin-bottom:16px;text-align:center;">✦ Miembros activos de la comunidad</h5>
+        <p style="font-size:11px;color:rgba(255,255,255,0.2);text-align:center;margin-bottom:16px;">Pulsa en cada miembro para ver más detalles</p>
+        <div class="comm-network" id="commNetwork"></div>
+      </div>
+    </div>
+    <div style="text-align:center;">
+      <button class="join-btn" onclick="openJoinModal()">🤝 Sé parte de esta comunidad, únete acá</button>
+    </div>
+  </div>
+</section>
+
+<!-- ── Member Detail Modal ── -->
+<div class="modal-overlay" id="memberModal">
+  <div class="modal-card">
+    <button class="modal-close" onclick="closeMemberModal()">✕</button>
+    <div class="modal-photo" id="modalPhoto">💈</div>
+    <div class="modal-name" id="modalName"></div>
+    <div class="modal-role" id="modalRole"></div>
+    <div class="modal-stats">
+      <div class="ms-item"><div class="ms-val" id="modalScore"></div><div class="ms-lbl">Puntaje</div></div>
+      <div class="ms-item"><div class="ms-val" id="modalReviews"></div><div class="ms-lbl">Reseñas</div></div>
+    </div>
+    <div class="modal-address">📍 <span id="modalAddress"></span></div>
+  </div>
+</div>
+
+<!-- ── Join Community Modal ── -->
+<div class="modal-overlay" id="joinModal">
+  <div class="modal-card">
+    <button class="modal-close" onclick="closeJoinModal()">✕</button>
+    <div style="font-size:40px;margin-bottom:12px;">🤝</div>
+    <h3 style="font-size:18px;font-weight:700;margin-bottom:8px;">Únete a la comunidad Ruta W</h3>
+    <p style="font-size:13px;color:rgba(255,255,255,0.35);margin-bottom:16px;">Requisitos mínimos para ser parte de la red de barberos aliados de Banco W:</p>
+    <ul class="req-list">
+      <li><span class="req-check">✓</span><span><strong>Ser microempresario del sector belleza</strong><br>Barbería, peluquería, estética, spa, manicure o similar.</span></li>
+      <li><span class="req-check">✓</span><span><strong>Tener negocio formal o en formalización</strong><br>Registro mercantil o compromiso de formalización en los primeros 6 meses.</span></li>
+      <li><span class="req-check">✓</span><span><strong>Residir en Cali o área metropolitana</strong><br>La comunidad opera en Cali, Jamundí, Palmira y Yumbo.</span></li>
+      <li><span class="req-check">✓</span><span><strong>Participar en capacitaciones</strong><br>Compromiso de asistir a al menos 2 talleres al año de la agenda Ruta W.</span></li>
+      <li><span class="req-check">✓</span><span><strong>Mantener una puntuación promedio ≥ 4.0</strong><br>Basado en las reseñas de tus clientes en la plataforma.</span></li>
+      <li><span class="req-check">✓</span><span><strong>Ser referido por un aliado activo</strong><br>Dos miembros activos de la comunidad deben avalar tu ingreso.</span></li>
+    </ul>
+    <button class="join-btn" onclick="closeJoinModal()" style="width:100%;text-align:center;justify-content:center;">Entendido, gracias</button>
+  </div>
+</div>
+
+<section id="rating-explanation">
+  <div class="container">
+    <div class="section-label">⭐ Calificación de Servicios</div>
+    <h2 class="section-title">¿Cómo califican los clientes <span class="orange">los servicios?</span></h2>
+    <p class="section-sub">Cada servicio recibe una puntuación de 1 a 5 estrellas basada en la experiencia del cliente. Así funciona nuestro sistema de calificación:</p>
+    <div class="rating-grid">
+      <div class="rating-card">
+        <div class="rc-stars">★☆☆☆☆<span class="dim"></span></div>
+        <div class="rc-label">1 estrella · Malo</div>
+        <div class="rc-desc">El servicio no cumplió con lo esperado. Problemas de atención, calidad o tiempo de espera. El miembro recibe retroalimentación del comité de calidad.</div>
+        <div class="rc-bar" style="background:var(--w-orange);width:20%"></div>
+      </div>
+      <div class="rating-card">
+        <div class="rc-stars">★★☆☆☆</div>
+        <div class="rc-label">2 estrellas · Regular</div>
+        <div class="rc-desc">El servicio fue aceptable pero con aspectos a mejorar. Se recomienda al barbero revisar los comentarios y ajustar su servicio.</div>
+        <div class="rc-bar" style="background:var(--w-orange);width:40%"></div>
+      </div>
+      <div class="rating-card">
+        <div class="rc-stars">★★★☆☆</div>
+        <div class="rc-label">3 estrellas · Bueno</div>
+        <div class="rc-desc">Servicio satisfactorio dentro de lo esperado. El cliente quedó conforme pero sin destacar. Es la base para seguir mejorando.</div>
+        <div class="rc-bar" style="background:var(--w-orange);width:60%"></div>
+      </div>
+      <div class="rating-card">
+        <div class="rc-stars">★★★★☆</div>
+        <div class="rc-label">4 estrellas · Muy bueno</div>
+        <div class="rc-desc">Servicio destacado con atención de calidad. El cliente está satisfecho y probablemente regrese. El miembro gana puntos en la comunidad.</div>
+        <div class="rc-bar" style="background:var(--w-orange);width:80%"></div>
+      </div>
+      <div class="rating-card">
+        <div class="rc-stars">★★★★★</div>
+        <div class="rc-label">5 estrellas · Excelente</div>
+        <div class="rc-desc">Servicio excepcional que superó las expectativas. Clientes fidelizados que recomiendan activamente. El miembro recibe la distinción "Aliado Estrella".</div>
+        <div class="rc-bar" style="background:var(--w-blue-light);width:100%"></div>
+      </div>
+      <div class="rating-card">
+        <div class="rc-stars" style="font-size:22px;">📊</div>
+        <div class="rc-label">Promedio general</div>
+        <div class="rc-desc">El puntaje promedio de la comunidad Ruta W es de <strong style="color:var(--w-orange);">4.7 ★</strong>. Los clientes valoran la atención, la calidad del corte y la confianza del barbero.</div>
+        <div class="rc-bar" style="background:linear-gradient(90deg,var(--w-orange),var(--w-orange),var(--w-blue-light));width:94%"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════ -->
+<!--  MAPA DE CALI - NUEVA SECCIÓN       -->
+<!-- ════════════════════════════════════ -->
+<section id="mapa-cali">
+  <div class="container">
+    <div class="section-label">📍 Mapa de Cali</div>
+    <h2 class="section-title">Encuentra centros de estética <span class="orange">cerca de ti</span></h2>
+    <p class="section-sub">Selecciona una zona de Cali para descubrir los mejores centros de estética, barberías, peluquerías y más, con puntuaciones y reseñas de la comunidad Ruta W.</p>
+    <div class="mapa-layout">
+      <div>
+        <div class="mapa-svg-container">
+          <svg viewBox="0 0 420 540" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="streets" patternUnits="userSpaceOnUse" width="8" height="8" patternTransform="rotate(15)">
+                <path d="M 0 4 L 8 4 M 4 0 L 4 8" stroke="rgba(255,255,255,0.015)" stroke-width="0.5"/>
+              </pattern>
+              <filter id="glow">
+                <feGaussianBlur stdDeviation="2" result="blur"/>
+                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+            </defs>
+
+            <!-- Contorno de la ciudad de Cali (silueta realista) -->
+            <path d="M 185 25 C 255 20, 320 35, 340 70 C 360 105, 365 145, 360 190 C 355 235, 345 255, 335 285 C 325 315, 310 350, 285 395 C 260 440, 230 475, 195 505 C 160 530, 120 525, 90 505 C 60 485, 45 455, 40 415 C 35 375, 38 340, 42 300 C 46 260, 50 220, 58 180 C 66 140, 80 105, 100 80 C 120 55, 150 30, 185 25 Z"
+                  fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.06)" stroke-width="1.5"/>
+
+            <!-- Trama de calles -->
+            <path d="M 185 25 C 255 20, 320 35, 340 70 C 360 105, 365 145, 360 190 C 355 235, 345 255, 335 285 C 325 315, 310 350, 285 395 C 260 440, 230 475, 195 505 C 160 530, 120 525, 90 505 C 60 485, 45 455, 40 415 C 35 375, 38 340, 42 300 C 46 260, 50 220, 58 180 C 66 140, 80 105, 100 80 C 120 55, 150 30, 185 25 Z"
+                  fill="url(#streets)" stroke="none"/>
+
+            <!-- Cerro de los Farallones / montañas al oeste -->
+            <path d="M 40 180 Q 42 120 48 90 Q 52 70 55 55 L 58 40 L 62 35 L 75 28 Q 65 45 60 60 Q 55 80 52 100 Q 48 140 46 180 Z"
+                  fill="rgba(0,177,187,0.04)" stroke="rgba(0,177,187,0.08)" stroke-width="1"/>
+            <text x="52" y="120" fill="rgba(0,177,187,0.15)" font-size="7" font-weight="500" text-anchor="middle" font-family="Inter,system-ui,sans-serif" transform="rotate(-75,52,120)">FARALLONES</text>
+
+            <!-- Río Cauca -->
+            <path d="M 175 25 Q 200 80 195 140 Q 190 200 170 250 Q 150 300 140 360 Q 130 420 138 490"
+                  stroke="rgba(0,177,187,0.2)" stroke-width="3" fill="none" stroke-dasharray="5,3"/>
+            <path d="M 175 25 Q 200 80 195 140 Q 190 200 170 250 Q 150 300 140 360 Q 130 420 138 490"
+                  stroke="rgba(0,177,187,0.08)" stroke-width="8" fill="none" opacity="0.5"/>
+            <text x="165" y="280" fill="rgba(0,177,187,0.12)" font-size="7" font-weight="500" text-anchor="middle" font-family="Inter,system-ui,sans-serif" transform="rotate(-15,165,280)">RÍO CAUCA</text>
+
+            <!-- Zona NORTE -->
+            <g class="mapa-zone" data-zone="norte" onclick="selectZone('norte')">
+              <path class="zone-shape" d="M 185 25 C 255 20, 320 35, 340 70 C 350 90, 358 115, 360 140 C 348 140, 320 138, 300 135 C 275 130, 255 125, 240 120 C 220 115, 200 115, 195 120 C 185 125, 175 135, 175 140 C 170 125, 165 110, 165 95 C 160 78, 152 60, 130 50 C 110 40, 90 35, 80 40 C 75 42, 70 45, 68 48 C 72 38, 90 28, 120 25 C 145 22, 170 25, 185 25 Z"
+                    fill="rgba(255,105,0,0.08)" stroke="var(--w-orange)" stroke-width="1.5" style="transition: all 0.3s;"/>
+              <text x="235" y="90" fill="rgba(255,105,0,0.6)" font-size="18" font-weight="800" text-anchor="middle" font-family="Inter,system-ui,sans-serif" filter="url(#glow)">NORTE</text>
+              <text x="180" y="60" fill="rgba(255,105,0,0.12)" font-size="6" font-weight="400" text-anchor="middle" font-family="Inter,system-ui,sans-serif">Versalles</text>
+              <text x="290" y="90" fill="rgba(255,105,0,0.12)" font-size="6" font-weight="400" text-anchor="middle" font-family="Inter,system-ui,sans-serif">La Flora</text>
+              <text x="200" y="125" fill="rgba(255,105,0,0.10)" font-size="6" font-weight="400" text-anchor="left" font-family="Inter,system-ui,sans-serif">Prado</text>
+            </g>
+
+            <!-- Zona OESTE -->
+            <g class="mapa-zone" data-zone="oeste" onclick="selectZone('oeste')">
+              <path class="zone-shape" d="M 68 48 C 70 45, 75 42, 80 40 C 90 35, 110 40, 130 50 C 152 60, 160 78, 165 95 C 170 110, 175 130, 175 140 C 175 145, 176 155, 174 165 C 172 180, 168 195, 164 210 C 160 225, 155 240, 150 255 C 145 270, 140 285, 136 300 C 132 310, 128 315, 122 320 C 110 310, 95 295, 82 280 C 65 260, 50 240, 44 220 C 38 200, 40 180, 46 160 C 50 140, 54 120, 58 100 C 62 80, 65 60, 68 48 Z"
+                    fill="rgba(26,115,200,0.08)" stroke="var(--w-blue-light)" stroke-width="1.5" style="transition: all 0.3s;"/>
+              <text x="115" y="200" fill="rgba(26,115,200,0.6)" font-size="18" font-weight="800" text-anchor="middle" font-family="Inter,system-ui,sans-serif" filter="url(#glow)" transform="rotate(-85,115,200)">OESTE</text>
+              <text x="80" y="270" fill="rgba(26,115,200,0.12)" font-size="6" font-weight="400" text-anchor="middle" font-family="Inter,system-ui,sans-serif" transform="rotate(-85,80,270)">Normandía</text>
+              <text x="135" y="260" fill="rgba(26,115,200,0.10)" font-size="6" font-weight="400" text-anchor="middle" font-family="Inter,system-ui,sans-serif">San Fernando</text>
+            </g>
+
+            <!-- Zona CENTRO -->
+            <g class="mapa-zone" data-zone="centro" onclick="selectZone('centro')">
+              <path class="zone-shape" d="M 175 140 C 195 120, 220 115, 240 120 C 255 125, 275 130, 300 135 C 320 138, 348 140, 360 140 C 362 160, 365 185, 360 210 C 355 235, 345 255, 335 275 C 320 265, 300 255, 285 250 C 265 245, 245 242, 225 240 C 205 238, 185 238, 170 240 C 165 220, 162 200, 164 180 C 166 165, 168 150, 175 140 Z"
+                    fill="rgba(0,177,187,0.08)" stroke="var(--w-blue)" stroke-width="1.5" style="transition: all 0.3s;"/>
+              <text x="270" y="205" fill="rgba(0,177,187,0.6)" font-size="18" font-weight="800" text-anchor="middle" font-family="Inter,system-ui,sans-serif" filter="url(#glow)">CENTRO</text>
+              <text x="280" y="155" fill="rgba(0,177,187,0.12)" font-size="6" font-weight="400" text-anchor="middle" font-family="Inter,system-ui,sans-serif">San Antonio</text>
+              <text x="240" y="260" fill="rgba(0,177,187,0.12)" font-size="6" font-weight="400" text-anchor="middle" font-family="Inter,system-ui,sans-serif">Granada</text>
+              <text x="310" y="240" fill="rgba(0,177,187,0.10)" font-size="6" font-weight="400" text-anchor="middle" font-family="Inter,system-ui,sans-serif">El Peñón</text>
+            </g>
+
+            <!-- Zona ORIENTE -->
+            <g class="mapa-zone" data-zone="oriente" onclick="selectZone('oriente')">
+              <path class="zone-shape" d="M 170 240 C 185 238, 205 238, 225 240 C 245 242, 265 245, 285 250 C 300 255, 320 265, 335 275 C 330 300, 315 330, 295 355 C 275 370, 250 375, 225 375 C 200 375, 175 370, 155 365 C 150 340, 148 310, 152 285 C 156 265, 162 250, 170 240 Z"
+                    fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.12)" stroke-width="1.5" style="transition: all 0.3s;"/>
+              <text x="245" y="310" fill="rgba(255,255,255,0.25)" font-size="16" font-weight="800" text-anchor="middle" font-family="Inter,system-ui,sans-serif" filter="url(#glow)">ORIENTE</text>
+              <text x="225" y="355" fill="rgba(255,255,255,0.10)" font-size="6" font-weight="400" text-anchor="middle" font-family="Inter,system-ui,sans-serif">Aguablanca</text>
+            </g>
+
+            <!-- Zona SUR -->
+            <g class="mapa-zone" data-zone="sur" onclick="selectZone('sur')">
+              <path class="zone-shape" d="M 122 320 C 128 315, 132 310, 136 300 C 140 290, 145 280, 150 275 C 155 270, 160 268, 165 268 C 170 268, 175 270, 180 275 C 185 278, 190 285, 195 295 C 200 290, 210 285, 220 282 C 235 278, 250 280, 265 285 C 280 290, 290 300, 295 310 C 300 320, 305 340, 300 360 C 295 380, 285 400, 270 420 C 255 440, 235 460, 215 475 C 195 490, 170 505, 145 510 C 120 510, 100 500, 85 485 C 75 470, 72 450, 75 430 C 78 410, 85 390, 90 370 C 95 355, 105 340, 112 328 C 115 324, 118 322, 122 320 Z"
+                    fill="rgba(255,105,0,0.06)" stroke="var(--w-orange)" stroke-width="1.5" style="transition: all 0.3s;"/>
+              <text x="195" y="410" fill="rgba(255,255,255,0.2)" font-size="16" font-weight="800" text-anchor="middle" font-family="Inter,system-ui,sans-serif" filter="url(#glow)">SUR</text>
+              <text x="140" y="490" fill="rgba(255,255,255,0.10)" font-size="6" font-weight="400" text-anchor="middle" font-family="Inter,system-ui,sans-serif">Pance</text>
+              <text x="260" y="390" fill="rgba(255,255,255,0.10)" font-size="6" font-weight="400" text-anchor="middle" font-family="Inter,system-ui,sans-serif">Valle del Lili</text>
+              <text x="190" y="450" fill="rgba(255,255,255,0.08)" font-size="6" font-weight="400" text-anchor="middle" font-family="Inter,system-ui,sans-serif">Univ. del Valle</text>
+            </g>
+
+            <!-- Puntos de referencia -->
+            <circle cx="235" cy="90" r="2" fill="var(--w-orange)" opacity="0.4"/>
+            <circle cx="270" cy="205" r="2" fill="var(--w-blue)" opacity="0.4"/>
+            <circle cx="115" cy="200" r="2" fill="var(--w-blue-light)" opacity="0.4"/>
+            <circle cx="245" cy="310" r="2" fill="rgba(255,255,255,0.3)" opacity="0.4"/>
+            <circle cx="195" cy="410" r="2" fill="var(--w-orange)" opacity="0.4"/>
+
+            <!-- Indicador norte -->
+            <text x="200" y="12" fill="rgba(255,255,255,0.08)" font-size="7" font-weight="500" text-anchor="middle" font-family="Inter,system-ui,sans-serif">▲ N</text>
+          </svg>
+
+          <div class="mapa-legend">
+            <div class="mapa-legend-item" data-zone="norte" onclick="selectZone('norte')">
+              <span class="dot" style="background:var(--w-orange)"></span> Norte
+            </div>
+            <div class="mapa-legend-item" data-zone="centro" onclick="selectZone('centro')">
+              <span class="dot" style="background:var(--w-blue)"></span> Centro
+            </div>
+            <div class="mapa-legend-item" data-zone="oeste" onclick="selectZone('oeste')">
+              <span class="dot" style="background:var(--w-blue-light)"></span> Oeste
+            </div>
+            <div class="mapa-legend-item" data-zone="oriente" onclick="selectZone('oriente')">
+              <span class="dot" style="background:rgba(255,255,255,0.3)"></span> Oriente
+            </div>
+            <div class="mapa-legend-item" data-zone="sur" onclick="selectZone('sur')">
+              <span class="dot" style="background:var(--w-orange)"></span> Sur
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mapa-results" id="mapaResults">
+        <div class="mapa-placeholder" id="mapaPlaceholder">
+          <div class="mph-icon">🗺️</div>
+          <h4>Selecciona una zona</h4>
+          <p>Haz clic en cualquier zona del mapa para ver los centros de estética disponibles en esa área de Cali.</p>
+        </div>
+        <div id="mapaZoneContent" style="display:none"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="hero">
+  <div class="container">
+    <div>
+      <div class="hero-badge"><span class="dot"></span> Comunidad de Barberos Aliados</div>
+      <h1>El ecosistema que <span class="highlight">impulsa tu negocio</span></h1>
+      <p>Ruta W conecta barberos, estilistas, proveedores, centros de capacitación y Banco W en una red de confianza y crecimiento mutuo. No eres solo un barbero, eres parte de una comunidad.</p>
+      <div class="hero-actions">
+        <a href="#agenda" class="btn-primary">📅 Agenda tu cita</a>
+        <a href="#ecosystem" class="btn-secondary">Conoce el ecosistema →</a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="num orange">261K</div><div class="lbl">Peluquerías en Colombia</div></div>
+        <div><div class="num blue">94%</div><div class="lbl">Son micronegocios</div></div>
+        <div><div class="num orange">$13.4B</div><div class="lbl">COP · Valor sector 2024</div></div>
+        <div><div class="num blue">6.7%</div><div class="lbl">Crecimiento anual</div></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <div class="card-label">✦ Actores del ecosistema</div>
+        <div class="mini-grid">
+          <div class="mini-actor"><div class="icon">💈</div><div class="name">Barbero</div></div>
+          <div class="mini-actor"><div class="icon">🏦</div><div class="name">Banco W</div></div>
+          <div class="mini-actor"><div class="icon">👥</div><div class="name">Clientes</div></div>
+          <div class="mini-actor"><div class="icon">📦</div><div class="name">Proveedores</div></div>
+          <div class="mini-actor"><div class="icon">🎓</div><div class="name">Capacitación</div></div>
+          <div class="mini-actor"><div class="icon">🔄</div><div class="name">Comunidad</div></div>
+          <div class="mini-actor"><div class="icon">⭐</div><div class="name">Fidelización</div></div>
+          <div class="mini-actor"><div class="icon">🤝</div><div class="name">Gremios</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="ecosystem">
+  <div class="container">
+    <div class="section-label">🌐 Ecosistema de Valor</div>
+    <h2 class="section-title">Todos los actores <span class="orange">trabajan para ti</span></h2>
+    <p class="section-sub">Cada actor del ecosistema cumple un rol fundamental en el crecimiento del microempresario. Banco W articula la red con confianza y cercanía.</p>
+    <div class="eco-grid" id="ecoGrid"></div>
+  </div>
+</section>
+
+<section id="agenda">
+  <div class="container">
+    <div class="section-label">📅 Agenda tu cita</div>
+    <h2 class="section-title">Agenda tu cita <span class="orange">acá</span></h2>
+    <p class="section-sub">Cada cita que agendes impulsa a toda la comunidad: el barbero, sus proveedores, su formación y el ecosistema completo.</p>
+    <div class="appointment-layout">
+      <div class="info">
+        <h3>¿Por qué agendar con Ruta W?</h3>
+        <p>No es solo un corte de cabello. Es apoyar a un microempresario que forma parte de una red de confianza respaldada por Banco W.</p>
+        <div class="benefits">
+          <div class="benefit"><div class="check">✓</div><div><strong>Barberos aliados certificados</strong><br>Capacitación continua y certificaciones avaladas por gremios del sector.</div></div>
+          <div class="benefit"><div class="check">✓</div><div><strong>Impulsas la comunidad</strong><br>Parte de tu pago va a programas de formación y compras conjuntas de la comunidad.</div></div>
+          <div class="benefit"><div class="check">✓</div><div><strong>Programa de fidelización</strong><br>Acumula puntos canjeables en servicios y productos de la red Ruta W.</div></div>
+          <div class="benefit"><div class="check">✓</div><div><strong>Respaldo Banco W</strong><br>Cada transacción fortalece el ecosistema financiero del microempresario.</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="booking-card">
+          <div class="step-indicators">
+            <div class="step-dot active" id="stepDot0"></div>
+            <div class="step-dot" id="stepDot1"></div>
+            <div class="step-dot" id="stepDot2"></div>
+            <div class="step-dot" id="stepDot3"></div>
+          </div>
+          <div class="step-label" id="stepLabel"><strong>Paso 1 de 4:</strong> ¿Qué servicio necesitas?</div>
+
+          <div class="booking-step active" id="step0">
+            <h4>Elige tu servicio</h4>
+            <div class="service-grid" id="serviceGrid"></div>
+            <button class="btn-next" onclick="nextStep(0)">Continuar →</button>
+          </div>
+
+          <div class="booking-step" id="step1">
+            <h4>Elige tu barbero</h4>
+            <div class="barber-grid" id="barberGrid"></div>
+            <button class="btn-back" onclick="prevStep(1)">← Atrás</button>
+            <button class="btn-next" onclick="nextStep(1)">Continuar →</button>
+          </div>
+
+          <div class="booking-step" id="step2">
+            <h4>Fecha y hora</h4>
+            <div class="date-time-row">
+              <div>
+                <label>Fecha</label>
+                <input type="date" id="bookingDate">
+              </div>
+              <div>
+                <label>Hora</label>
+                <select id="bookingTime">
+                  <option value="09:00">09:00 AM</option>
+                  <option value="10:00">10:00 AM</option>
+                  <option value="11:00">11:00 AM</option>
+                  <option value="14:00">02:00 PM</option>
+                  <option value="15:00">03:00 PM</option>
+                  <option value="16:00">04:00 PM</option>
+                  <option value="17:00">05:00 PM</option>
+                </select>
+              </div>
+            </div>
+            <button class="btn-back" onclick="prevStep(2)">← Atrás</button>
+            <button class="btn-next" onclick="nextStep(2)">Continuar →</button>
+          </div>
+
+          <div class="booking-step" id="step3">
+            <div id="confirmation">
+              <div class="conf-icon">✅</div>
+              <h4>¡Cita confirmada!</h4>
+              <p>Tu agendamiento impulsa a todo el ecosistema Ruta W. Aquí están los detalles:</p>
+              <div class="conf-details" id="confDetails"></div>
+              <div class="conf-impact">
+                <h5>✦ Impacto en la comunidad</h5>
+                <p id="confImpact">Al agendar, apoyas a un microempresario, a sus proveedores locales y al programa de fidelización de la comunidad Ruta W.</p>
+              </div>
+              <button class="btn-reset" onclick="resetBooking()">Agendar otra cita</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="directorio">
+  <div class="container">
+    <div class="section-label">📖 Directorio de Contactos</div>
+    <h2 class="section-title">Tu red de <span class="orange">confianza</span></h2>
+    <p class="section-sub">Contactos frecuentes del ecosistema Ruta W: desde tus clientes más leales hasta proveedores, aliados y asesores financieros.</p>
+    <div class="dir-tabs" id="dirTabs"></div>
+    <div id="dirContainers"></div>
+  </div>
+</section>
+
+<section id="impact">
+  <div class="container">
+    <div class="section-label">📊 Impacto</div>
+    <h2 class="section-title">Resultados que <span class="orange">transforman</span></h2>
+    <p class="section-sub">El ecosistema Ruta W ya está generando cambios reales en la comunidad de barberos y estilistas.</p>
+    <div class="impact-grid">
+      <div class="impact-card"><div class="ic-num">50+</div><div class="ic-label">Barberos aliados activos en la comunidad</div></div>
+      <div class="impact-card"><div class="ic-num blue">1,200+</div><div class="ic-label">Citas agendadas a través de la red</div></div>
+      <div class="impact-card"><div class="ic-num">15–25%</div><div class="ic-label">Ahorro en insumos por compras conjuntas</div></div>
+      <div class="impact-card"><div class="ic-num blue">35%</div><div class="ic-label">Incremento de ingresos post-capacitación</div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:16px;margin-bottom:16px;">
+      <img id="qrCode" src="" alt="QR Ruta W" style="border-radius:12px;border:1px solid rgba(255,255,255,0.06);">
+      <div style="font-size:11px;color:rgba(255,255,255,0.2);">Escanea para abrir Ruta W</div>
+    </div>
+    <p>Ruta W · Un proyecto de Banco W · Ecosistema de Confianza para Microempresarios de la Belleza</p>
+  </div>
+</footer>
+
+<script>
+// ════════════════════════════════════════════
+//  DATOS DE CENTROS DE ESTÉTICA POR ZONA (CALI)
+// ════════════════════════════════════════════
+
+const zonasInfo = {
+  norte: {
+    nombre: "Norte",
+    icon: "🏗️",
+    color: "#FF6900",
+    desc: "Zona norte de Cali · Barrios: La Flora, Prado, Versalles, San Vicente",
+    centros: [
+      { nombre: "Barbería Élite Norte", tipo: "Barbería", icon: "💈", rating: 4.8, reviewCount: 124,
+        resenas: [
+          { nombre: "Andrés M.", avatar: "🧔", rating: 5, date: "12 may 2026", texto: "Excelente servicio, el mejor corte de la zona norte. Muy recomendado." },
+          { nombre: "Laura C.", avatar: "👩", rating: 5, date: "8 may 2026", texto: "Mi esposo salió feliz con su corte. Atención profesional y rápida." },
+          { nombre: "Carlos R.", avatar: "👨", rating: 4, date: "2 may 2026", texto: "Buen ambiente y buenos precios. Volveré sin duda." }
+        ]},
+      { nombre: "Estética Lady", tipo: "Peluquería · Manicure", icon: "💇‍♀️", rating: 4.7, reviewCount: 98,
+        resenas: [
+          { nombre: "María F.", avatar: "👩‍🦰", rating: 5, date: "15 may 2026", texto: "Me encantó el manicure, muy profesional y los precios accesibles." },
+          { nombre: "Diana P.", avatar: "👩", rating: 4, date: "10 may 2026", texto: "Buen servicio de peluquería, el tratamiento capilar me dejó el cabello suave." },
+          { nombre: "Sofía G.", avatar: "👩‍🦱", rating: 5, date: "5 may 2026", texto: "Las uñas me quedaron hermosas, muy recomendada para pedicure también." }
+        ]},
+      { nombre: "Peluquería Unisex Estilo", tipo: "Peluquería unisex", icon: "✂️", rating: 4.6, reviewCount: 87,
+        resenas: [
+          { nombre: "Pedro L.", avatar: "👨", rating: 5, date: "14 may 2026", texto: "Buena atención, cortes modernos y precios justos. Recomendado." },
+          { nombre: "Ana M.", avatar: "👩", rating: 4, date: "9 may 2026", texto: "Corte unisex de calidad, atienden tanto a hombres como mujeres muy bien." }
+        ]},
+      { nombre: "Barber Shop Don Carlos", tipo: "Barbería tradicional", icon: "🧔", rating: 4.9, reviewCount: 203,
+        resenas: [
+          { nombre: "Jorge H.", avatar: "🧔", rating: 5, date: "16 may 2026", texto: "Don Carlos es un maestro de la barbería. Corte perfecto y barba impecable." },
+          { nombre: "Felipe A.", avatar: "👨", rating: 5, date: "11 may 2026", texto: "La mejor barbería del norte de Cali. Atención personalizada y calidad." },
+          { nombre: "Ricardo T.", avatar: "👱", rating: 5, date: "6 may 2026", texto: "Llevo 3 años viniendo acá, nunca me han dejado mal. Altamente recomendado." },
+          { nombre: "Miguel S.", avatar: "🧔", rating: 4, date: "1 may 2026", texto: "Excelente ambiente, buen precio y el mejor arreglo de barba." }
+        ]},
+      { nombre: "Centro de Estética Mary", tipo: "Estética integral", icon: "💄", rating: 4.5, reviewCount: 76,
+        resenas: [
+          { nombre: "Carmen V.", avatar: "👩", rating: 5, date: "13 may 2026", texto: "Mary es una excelente profesional, me hizo un tratamiento facial increíble." },
+          { nombre: "Luisa B.", avatar: "👩‍🦰", rating: 4, date: "7 may 2026", texto: "Buen servicio de depilación y cuidado facial. Volveré." }
+        ]},
+      { nombre: "Spa Capilar Norte", tipo: "Spa capilar", icon: "💆", rating: 4.7, reviewCount: 112,
+        resenas: [
+          { nombre: "Valentina R.", avatar: "👩‍🦱", rating: 5, date: "15 may 2026", texto: "El spa capilar es una experiencia única. Mi cabello quedó espectacular." },
+          { nombre: "Camila T.", avatar: "👩", rating: 4, date: "10 may 2026", texto: "Muy buen tratamiento para el cabello maltratado. Precio justo." },
+          { nombre: "Andrea L.", avatar: "👩‍🦰", rating: 5, date: "4 may 2026", texto: "Relajante y profesional. El mejor spa capilar de la zona." }
+        ]},
+      { nombre: "Barbería Los Pelados", tipo: "Barbería moderna", icon: "💈", rating: 4.4, reviewCount: 65,
+        resenas: [
+          { nombre: "Kevin J.", avatar: "👨", rating: 4, date: "12 may 2026", texto: "Estilo moderno y buenos diseños. El ambiente es juvenil y agradable." },
+          { nombre: "Bryan C.", avatar: "👱", rating: 5, date: "6 may 2026", texto: "Me hicieron un diseño en el cabello espectacular. Muy creativos." }
+        ]},
+      { nombre: "Uñas y Más", tipo: "Manicure · Pedicure", icon: "💅", rating: 4.6, reviewCount: 91,
+        resenas: [
+          { nombre: "Carolina S.", avatar: "👩", rating: 5, date: "14 may 2026", texto: "Las uñas acrílicas me quedaron divinas. Trabajo impecable." },
+          { nombre: "Daniela M.", avatar: "👩‍🦱", rating: 4, date: "8 may 2026", texto: "Buen servicio de pedicure, muy higiénico y profesional." }
+        ]}
+    ]
+  },
+  centro: {
+    nombre: "Centro",
+    icon: "🏛️",
+    color: "#00B1BB",
+    desc: "Zona centro de Cali · Barrios: Centro, San Antonio, Granada, El Peñón",
+    centros: [
+      { nombre: "Estética San Antonio", tipo: "Peluquería · Barbería", icon: "💇", rating: 4.7, reviewCount: 156,
+        resenas: [
+          { nombre: "Pablo G.", avatar: "🧔", rating: 5, date: "16 may 2026", texto: "Excelente atención en el corazón de San Antonio. Corte perfecto." },
+          { nombre: "Mónica L.", avatar: "👩", rating: 4, date: "11 may 2026", texto: "Muy buen servicio de peluquería, el tinte quedó justo como quería." },
+          { nombre: "Esteban R.", avatar: "👨", rating: 5, date: "5 may 2026", texto: "Gran ambiente y profesionales capacitados. Volveré con mi familia." }
+        ]},
+      { nombre: "Barbería Granada", tipo: "Barbería premium", icon: "🧔", rating: 4.9, reviewCount: 234,
+        resenas: [
+          { nombre: "Tomás H.", avatar: "🧔", rating: 5, date: "17 may 2026", texto: "La mejor barbería premium de Cali. Servicio de primera categoría." },
+          { nombre: "Andrés P.", avatar: "👨", rating: 5, date: "13 may 2026", texto: "Corte de cabello y barba de nivel internacional. Vale cada peso." },
+          { nombre: "Santiago M.", avatar: "👱", rating: 5, date: "9 may 2026", texto: "Ambiente exclusivo y atención personalizada. Siempre salgo contento." },
+          { nombre: "Felipe Z.", avatar: "🧔", rating: 4, date: "4 may 2026", texto: "Gran experiencia, el mejor café mientras esperas y un servicio impecable." }
+        ]},
+      { nombre: "Unisex Center", tipo: "Peluquería unisex", icon: "✂️", rating: 4.5, reviewCount: 89,
+        resenas: [
+          { nombre: "Lina M.", avatar: "👩", rating: 5, date: "14 may 2026", texto: "Buena atención, precios accesibles y cortes modernos para toda la familia." },
+          { nombre: "Julián C.", avatar: "👨", rating: 4, date: "8 may 2026", texto: "Servicio rápido y buen corte. Relación calidad-precio excelente." }
+        ]},
+      { nombre: "Spa de Uñas Centro", tipo: "Manicure · Pedicure", icon: "💅", rating: 4.8, reviewCount: 178,
+        resenas: [
+          { nombre: "Ximena A.", avatar: "👩", rating: 5, date: "16 may 2026", texto: "El mejor spa de uñas del centro. Diseños exclusivos y atención de lujo." },
+          { nombre: "Paola D.", avatar: "👩‍🦰", rating: 5, date: "11 may 2026", texto: "Uñas perfectas, servicio rápido y ambiente muy agradable. Súper recomendado." },
+          { nombre: "Gabriela S.", avatar: "👩‍🦱", rating: 4, date: "6 may 2026", texto: "Pedicure excelente, muy limpias y profesionales. Volveré sin duda." }
+        ]},
+      { nombre: "Barbería Clásica", tipo: "Barbería tradicional", icon: "💈", rating: 4.6, reviewCount: 112,
+        resenas: [
+          { nombre: "Manuel O.", avatar: "🧔", rating: 5, date: "15 may 2026", texto: "Barbería tradicional como las de antes. Corte impecable y buena charla." },
+          { nombre: "Diego F.", avatar: "👨", rating: 4, date: "9 may 2026", texto: "Buen servicio, barberos experimentados. El afeitado clásico es espectacular." }
+        ]},
+      { nombre: "Color & Estilo", tipo: "Colorimetría · Peinados", icon: "🎨", rating: 4.7, reviewCount: 143,
+        resenas: [
+          { nombre: "Verónica R.", avatar: "👩‍🦰", rating: 5, date: "17 may 2026", texto: "Me encantó el cambio de color, quedó exactamente como lo imaginaba." },
+          { nombre: "Natalia G.", avatar: "👩", rating: 5, date: "12 may 2026", texto: "Expertas en colorimetría, usan productos de alta calidad. Muy recomendadas." },
+          { nombre: "Mariana T.", avatar: "👩‍🦱", rating: 4, date: "7 may 2026", texto: "Muy creativas con los peinados. Ideal para ocasiones especiales." }
+        ]},
+      { nombre: "Peluquería El Peñón", tipo: "Peluquería · Tratamientos", icon: "💇‍♀️", rating: 4.9, reviewCount: 267,
+        resenas: [
+          { nombre: "Catalina P.", avatar: "👩", rating: 5, date: "17 may 2026", texto: "La mejor peluquería de Cali. Tratamientos capilares de primera calidad." },
+          { nombre: "Fernanda L.", avatar: "👩‍🦱", rating: 5, date: "14 may 2026", texto: "Salí renovada, el tratamiento de keratina me dejó el cabello espectacular." },
+          { nombre: "Alejandra M.", avatar: "👩‍🦰", rating: 5, date: "10 may 2026", texto: "Atención personalizada y profesionales muy capacitados. 100% recomendado." },
+          { nombre: "Rosa C.", avatar: "👩", rating: 4, date: "5 may 2026", texto: "Excelente servicio de alisado y corte. Precios justos para la calidad." }
+        ]}
+    ]
+  },
+  oeste: {
+    nombre: "Oeste",
+    icon: "🌄",
+    color: "#26C4CC",
+    desc: "Zona oeste de Cali · Barrios: Ciudad Jardín, Normandía, San Fernando",
+    centros: [
+      { nombre: "Spa & Beauty Ciudad Jardín", tipo: "Spa · Estética premium", icon: "💆", rating: 4.9, reviewCount: 312,
+        resenas: [
+          { nombre: "Isabel R.", avatar: "👩", rating: 5, date: "18 may 2026", texto: "Experiencia de spa de lujo. Masajes y tratamientos faciales increíbles." },
+          { nombre: "Marcela G.", avatar: "👩‍🦰", rating: 5, date: "15 may 2026", texto: "Un oasis en Ciudad Jardín. Instalaciones hermosas y personal muy profesional." },
+          { nombre: "Andrea P.", avatar: "👩‍🦱", rating: 5, date: "11 may 2026", texto: "El paquete de spa completo es una experiencia que todos deberían probar." },
+          { nombre: "Laura D.", avatar: "👩", rating: 4, date: "6 may 2026", texto: "Excelente servicio, aunque un poco costoso. Pero vale la pena cada peso." }
+        ]},
+      { nombre: "Estética Normandía", tipo: "Peluquería · Manicure", icon: "💇‍♀️", rating: 4.6, reviewCount: 87,
+        resenas: [
+          { nombre: "Patricia V.", avatar: "👩", rating: 5, date: "14 may 2026", texto: "Muy buena atención en Normandía. Corte y manicure de calidad." },
+          { nombre: "Sandra L.", avatar: "👩‍🦱", rating: 4, date: "8 may 2026", texto: "Servicio amable y profesional. Buen precio para la zona." }
+        ]},
+      { nombre: "Centro de Belleza Oeste", tipo: "Estética integral", icon: "💄", rating: 4.7, reviewCount: 145,
+        resenas: [
+          { nombre: "Claudia M.", avatar: "👩‍🦰", rating: 5, date: "16 may 2026", texto: "Centro de belleza completo, con todos los servicios. Me encanta." },
+          { nombre: "Ruth G.", avatar: "👩", rating: 4, date: "10 may 2026", texto: "Muy buen servicio de depilación y cuidado facial. Personal calificado." },
+          { nombre: "Gloria E.", avatar: "👩‍🦱", rating: 5, date: "4 may 2026", texto: "La estética integral que necesitaba. Súper recomendada." }
+        ]},
+      { nombre: "Barber Shop Donde Pipe", tipo: "Barbería · Diseños", icon: "🧔", rating: 4.9, reviewCount: 276,
+        resenas: [
+          { nombre: "Camilo A.", avatar: "🧔", rating: 5, date: "18 may 2026", texto: "Pipe es un artista con las tijeras. Los diseños que hace son únicos en Cali." },
+          { nombre: "Esteban G.", avatar: "👨", rating: 5, date: "14 may 2026", texto: "Siempre salgo satisfecho. Ambiente bacano y profesionales de primera." },
+          { nombre: "Nicolás R.", avatar: "👱", rating: 5, date: "9 may 2026", texto: "El mejor barbero de la zona oeste. Corte preciso y diseño impecable." },
+          { nombre: "Javier T.", avatar: "🧔", rating: 5, date: "5 may 2026", texto: "Donde Pipe es una experiencia. Cita obligada para los que quieren estilo." }
+        ]},
+      { nombre: "Uñas & Pestañas", tipo: "Manicure · Pestañas", icon: "💅", rating: 4.5, reviewCount: 93,
+        resenas: [
+          { nombre: "Katherine Z.", avatar: "👩", rating: 5, date: "13 may 2026", texto: "Pestañas divinas, trabajo muy delicado y profesional. Quedan naturales." },
+          { nombre: "Martha S.", avatar: "👩‍🦰", rating: 4, date: "7 may 2026", texto: "Uñas acrílicas de buena calidad y duración. Buen servicio." }
+        ]},
+      { nombre: "Barbería San Fernando", tipo: "Barbería · Estilo clásico", icon: "💈", rating: 4.6, reviewCount: 82,
+        resenas: [
+          { nombre: "Andrés B.", avatar: "🧔", rating: 4, date: "12 may 2026", texto: "Buena barbería en San Fernando. Cortes clásicos bien hechos." },
+          { nombre: "Luis C.", avatar: "👨", rating: 5, date: "6 may 2026", texto: "Atención de primera y precios justos. Recomendado." }
+        ]}
+    ]
+  },
+  oriente: {
+    nombre: "Oriente",
+    icon: "🌅",
+    color: "rgba(255,255,255,0.3)",
+    desc: "Zona oriente de Cali · Barrios: Aguablanca, Villanueva, El Vallado",
+    centros: [
+      { nombre: "Barbería El Vallado", tipo: "Barbería · Corte clásico", icon: "💈", rating: 4.7, reviewCount: 156,
+        resenas: [
+          { nombre: "Wilson M.", avatar: "🧔", rating: 5, date: "16 may 2026", texto: "Excelente barbería en El Vallado. Corte clásico impecable y buen precio." },
+          { nombre: "Jhon J.", avatar: "👨", rating: 4, date: "10 may 2026", texto: "Buen ambiente, barberos experimentados. Llevo a mis hijos allá." },
+          { nombre: "Oscar L.", avatar: "👱", rating: 5, date: "4 may 2026", texto: "Servicio rápido y de calidad. La mejor barbería del oriente." }
+        ]},
+      { nombre: "Estética Aguablanca", tipo: "Peluquería unisex", icon: "💇", rating: 4.5, reviewCount: 98,
+        resenas: [
+          { nombre: "Rosa M.", avatar: "👩", rating: 5, date: "14 may 2026", texto: "Buena atención y precios muy accesibles. Corte unisex de calidad." },
+          { nombre: "Luis A.", avatar: "👨", rating: 4, date: "8 may 2026", texto: "Servicio rápido y amable. Buen lugar para toda la familia." }
+        ]},
+      { nombre: "Peluquería Villanueva", tipo: "Peluquería · Alisados", icon: "✂️", rating: 4.6, reviewCount: 112,
+        resenas: [
+          { nombre: "Elena C.", avatar: "👩‍🦱", rating: 5, date: "15 may 2026", texto: "El alisado quedó perfecto, usan productos de buena calidad." },
+          { nombre: "Tatiana R.", avatar: "👩", rating: 4, date: "9 may 2026", texto: "Muy buen servicio de alisado y corte. Precio justo para el trabajo." },
+          { nombre: "Karen D.", avatar: "👩‍🦰", rating: 5, date: "3 may 2026", texto: "Me encantó el resultado del alisado. Muy profesionales." }
+        ]},
+      { nombre: "Barbería Los Muchachos", tipo: "Barbería moderna", icon: "🧔", rating: 4.8, reviewCount: 187,
+        resenas: [
+          { nombre: "Cristian V.", avatar: "🧔", rating: 5, date: "17 may 2026", texto: "Los Muchachos son los mejores del oriente. Corte moderno y ambiente chévere." },
+          { nombre: "Felipe R.", avatar: "👨", rating: 5, date: "12 may 2026", texto: "Siempre lleno, eso dice mucho de su calidad. Vale la pena esperar." },
+          { nombre: "Jairo P.", avatar: "👱", rating: 4, date: "6 may 2026", texto: "Buenos diseños y cortes modernos. El personal es muy amable." },
+          { nombre: "Andrés F.", avatar: "🧔", rating: 5, date: "1 may 2026", texto: "La mejor barbería moderna de la zona. Creativos y profesionales." }
+        ]},
+      { nombre: "Spa de Uñas Oriente", tipo: "Manicure · Pedicure", icon: "💅", rating: 4.4, reviewCount: 67,
+        resenas: [
+          { nombre: "Yurani S.", avatar: "👩", rating: 4, date: "13 may 2026", texto: "Buen servicio de uñas, trabajo limpio y detallado. Recomendado." },
+          { nombre: "Brenda L.", avatar: "👩‍🦰", rating: 5, date: "7 may 2026", texto: "Me encantó el diseño de uñas que me hicieron. Muy creativas." }
+        ]},
+      { nombre: "Peluquería Éxito Oriente", tipo: "Peluquería · Manicure", icon: "💇‍♀️", rating: 4.7, reviewCount: 134,
+        resenas: [
+          { nombre: "Nury G.", avatar: "👩‍🦱", rating: 5, date: "16 may 2026", texto: "Servicio completo: peluquería y manicure en un solo lugar. Muy conveniente." },
+          { nombre: "Alba R.", avatar: "👩", rating: 5, date: "11 may 2026", texto: "Excelente atención, precios accesibles y resultados hermosos." },
+          { nombre: "Dora L.", avatar: "👩‍🦰", rating: 4, date: "5 may 2026", texto: "Buen servicio, el manicure me duró dos semanas en perfecto estado." }
+        ]}
+    ]
+  },
+  sur: {
+    nombre: "Sur",
+    icon: "🌇",
+    color: "#FF6900",
+    desc: "Zona sur de Cali · Barrios: Pance, Valle del Lili, Caney, Marroquín, Univalle",
+    centros: [
+      { nombre: "Barbería Pance", tipo: "Barbería · Corte moderno", icon: "💈", rating: 4.8, reviewCount: 198,
+        resenas: [
+          { nombre: "Juan S.", avatar: "🧔", rating: 5, date: "17 may 2026", texto: "Corte moderno y ambiente relajado. Los barberos saben lo que hacen." },
+          { nombre: "Héctor M.", avatar: "👨", rating: 5, date: "12 may 2026", texto: "La mejor barbería de Pance. Diseños únicos y atención personalizada." },
+          { nombre: "Daniel C.", avatar: "👱", rating: 4, date: "7 may 2026", texto: "Buenos cortes, precios justos y excelente ubicación en Pance." }
+        ]},
+      { nombre: "Peluquería Valle del Lili", tipo: "Peluquería · Tintes", icon: "✂️", rating: 4.7, reviewCount: 134,
+        resenas: [
+          { nombre: "Diana F.", avatar: "👩", rating: 5, date: "15 may 2026", texto: "Excelentes tintes y mechas. Usan productos de alta gama." },
+          { nombre: "Lorena H.", avatar: "👩‍🦱", rating: 4, date: "9 may 2026", texto: "Corte moderno y atención amable. Buen precio para la calidad." },
+          { nombre: "Paula M.", avatar: "👩‍🦰", rating: 5, date: "3 may 2026", texto: "El mejor lugar para hacerse un tinte en el sur de Cali." }
+        ]},
+      { nombre: "Centro Estético Marroquín", tipo: "Estética · Tratamientos", icon: "💄", rating: 4.6, reviewCount: 89,
+        resenas: [
+          { nombre: "Gisell T.", avatar: "👩", rating: 5, date: "14 may 2026", texto: "Excelentes tratamientos faciales. La esteticista es muy profesional." },
+          { nombre: "Mayerly C.", avatar: "👩‍🦱", rating: 4, date: "8 may 2026", texto: "Buen servicio de estética integral en Marroquín. Precios justos." }
+        ]},
+      { nombre: "Barbería Cristóbal", tipo: "Barbería · Corte infantil", icon: "💈", rating: 4.5, reviewCount: 73,
+        resenas: [
+          { nombre: "Lucía M.", avatar: "👩", rating: 5, date: "15 may 2026", texto: "Cristóbal es muy paciente con los niños. Mi hijo salió feliz." },
+          { nombre: "Pedro A.", avatar: "👨", rating: 4, date: "9 may 2026", texto: "Buena barbería para cortes infantiles y también para adultos." }
+        ]},
+      { nombre: "Unisex Caney", tipo: "Peluquería unisex", icon: "💇", rating: 4.6, reviewCount: 95,
+        resenas: [
+          { nombre: "Mónica R.", avatar: "👩", rating: 5, date: "13 may 2026", texto: "Excelente atención en Caney. Corte moderno y buen precio." },
+          { nombre: "Carlos P.", avatar: "👨", rating: 4, date: "7 may 2026", texto: "Buena peluquería unisex, atienden bien a toda la familia." }
+        ]},
+      { nombre: "Estética Univalle", tipo: "Peluquería · Manicure", icon: "💇‍♀️", rating: 4.7, reviewCount: 118,
+        resenas: [
+          { nombre: "Laura M.", avatar: "👩", rating: 5, date: "16 may 2026", texto: "Cerca a la universidad, precios accesibles y buen servicio." },
+          { nombre: "Andrés G.", avatar: "🧔", rating: 4, date: "10 may 2026", texto: "Corte rápido y bien hecho. Ideal para estudiantes." },
+          { nombre: "Valeria T.", avatar: "👩‍🦱", rating: 5, date: "4 may 2026", texto: "Manicure y pedicure de calidad. Muy recomendada." }
+        ]},
+      { nombre: "Barbería La 14", tipo: "Barbería · Estilo urbano", icon: "💈", rating: 4.6, reviewCount: 78,
+        resenas: [
+          { nombre: "Andrés B.", avatar: "🧔", rating: 4, date: "12 may 2026", texto: "Estilo urbano y ambiente juvenil. Buenos diseños y cortes modernos." },
+          { nombre: "Duván C.", avatar: "👨", rating: 5, date: "6 may 2026", texto: "Me gusta el estilo descomplicado y el buen servicio. Recomendado." }
+        ]}
+    ]
+  }
+};
+
+// ── Selección de zona ──
+let currentZone = null;
+
+function selectZone(zoneId) {
+  currentZone = zoneId;
+
+  // Actualizar SVG
+  document.querySelectorAll('.mapa-zone').forEach(el => {
+    el.classList.toggle('active', el.dataset.zone === zoneId);
+    const path = el.querySelector('.zone-shape');
+    if (path) {
+      if (el.dataset.zone === zoneId) {
+        path.setAttribute('stroke-width', '3');
+      } else {
+        path.setAttribute('stroke-width', '1.5');
+      }
+    }
+  });
+
+  // Actualizar leyenda
+  document.querySelectorAll('.mapa-legend-item').forEach(el => {
+    el.classList.toggle('active', el.dataset.zone === zoneId);
+  });
+
+  // Mostrar contenido
+  const placeholder = document.getElementById('mapaPlaceholder');
+  const content = document.getElementById('mapaZoneContent');
+  placeholder.style.display = 'none';
+  content.style.display = 'block';
+
+  const zona = zonasInfo[zoneId];
+  let html = `
+    <div class="zone-header">
+      <div class="zh-icon" style="background:${zona.color}15">${zona.icon}</div>
+      <div>
+        <h3>${zona.nombre}</h3>
+        <div style="font-size:13px;color:rgba(255,255,255,0.3);">${zona.desc}</div>
+      </div>
+      <div class="zh-count">${zona.centros.length} centros</div>
+    </div>
+    <div class="centros-grid">
+  `;
+
+  zona.centros.forEach((c, idx) => {
+    const stars = renderStars(c.rating);
+    const rv = c.resenas || [];
+    let reviewsHtml = '';
+    if (rv.length > 0) {
+      reviewsHtml = rv.map(r => `
+        <div class="review-item">
+          <div class="rv-avatar">${r.avatar}</div>
+          <div class="rv-body">
+            <div class="rv-head">
+              <span class="rv-name">${r.nombre}</span>
+              <span class="rv-date">${r.date}</span>
+              <span class="rv-stars">${'★'.repeat(r.rating)}${'☆'.repeat(5 - r.rating)}</span>
+            </div>
+            <div class="rv-text">${r.texto}</div>
+          </div>
+        </div>
+      `).join('');
+    }
+    html += `
+      <div class="centro-card" onclick="toggleReviews(${idx})">
+        <div class="cc-icon" style="background:${zona.color}12">${c.icon}</div>
+        <div class="cc-info">
+          <div class="cc-name">${c.nombre}</div>
+          <div class="cc-type">${c.tipo}</div>
+        </div>
+        <div class="cc-rating">
+          <div class="cc-stars">${stars}</div>
+          <div class="cc-score"><strong>${c.rating}</strong> · ${c.reviewCount} reseñas</div>
+        </div>
+        <div class="cc-reviews-toggle" id="reviews-${idx}">
+          <div class="toggle-hint">▼ Ver reseñas (${rv.length})</div>
+          ${reviewsHtml}
+        </div>
+      </div>
+    `;
+  });
+
+  html += '</div>';
+  content.innerHTML = html;
+}
+
+function renderStars(rating) {
+  const full = Math.floor(rating);
+  const half = rating - full >= 0.5;
+  let s = '';
+  for (let i = 0; i < full; i++) s += '★';
+  if (half) s += '½';
+  const empty = 5 - full - (half ? 1 : 0);
+  for (let i = 0; i < empty; i++) s += '☆';
+  return s;
+}
+
+function toggleReviews(idx) {
+  const el = document.getElementById('reviews-' + idx);
+  if (!el) return;
+  el.classList.toggle('open');
+  const hint = el.querySelector('.toggle-hint');
+  if (hint) {
+    hint.textContent = el.classList.contains('open')
+      ? '▲ Ocultar reseñas'
+      : '▼ Ver reseñas (' + el.querySelectorAll('.review-item').length + ')';
+  }
+}
+
+// ════════════════════════════════════════════
+//  DATOS EXISTENTES (sin cambios)
+// ════════════════════════════════════════════
+
+const actors = [
+  { id:"barbero", icon:"💈", name:"Barbero / Estilista", role:"Microempresario", color:"#FF6900",
+    desc:"Eje del ecosistema. Busca crecer, formalizarse y construir un negocio sostenible.",
+    links:["Clientes","Banco W","Proveedores","Comunidad"],
+    value:"Banco W lo acompaña con educación financiera, microcréditos justos y una red de aliados." },
+  { id:"bancoW", icon:"🏦", name:"Banco W", role:"Aliado Financiero", color:"#FF6900",
+    desc:"Entidad de microfinanzas que articula todo el ecosistema con cercanía y confianza.",
+    links:["Barbero","Proveedores","Capacitación","Comunidad","Fidelización"],
+    value:"Ofrece microcréditos con acompañamiento, educación financiera y productos diseñados para el microempresario." },
+  { id:"clientes", icon:"👥", name:"Clientes", role:"Consumidores", color:"#26C4CC",
+    desc:"Son la razón de ser del negocio. Un cliente fidelizado vale más que diez nuevos.",
+    links:["Barbero","Fidelización","Tecnología"],
+    value:"El programa de fidelización Ruta W convierte clientes frecuentes en embajadores." },
+  { id:"proveedores", icon:"📦", name:"Proveedores", role:"Insumos", color:"#00B1BB",
+    desc:"Distribuidores de productos capilares, cosméticos y herramientas del sector.",
+    links:["Barbero","Comunidad","Banco W"],
+    value:"Facilitamos crédito para compras y articulamos compras conjuntas en la comunidad." },
+  { id:"capacitacion", icon:"🎓", name:"Centros de Capacitación", role:"Formación", color:"#26C4CC",
+    desc:"SENA, academias y talleres que profesionalizan al barbero y aumentan sus ingresos.",
+    links:["Barbero","Comunidad","Empleados"],
+    value:"Ruta W conecta barberos con becas y financiación de cursos certificados." },
+  { id:"comunidad", icon:"🔄", name:"Comunidad Barberos Aliados", role:"Red de Pares", color:"#00B1BB",
+    desc:"Red colaborativa de barberos que compran juntos, se refieren clientes y crecen como equipo.",
+    links:["Barbero","Banco W","Proveedores","Capacitación","Fidelización"],
+    value:"El corazón de Ruta W: una comunidad que compra mejor, aprende más y crece más fuerte." },
+  { id:"fidelizacion", icon:"⭐", name:"Fidelización", role:"Lealtad", color:"#FF6900",
+    desc:"Programa multicapa: clientes acumulan puntos, barberos acceden a membresía W.",
+    links:["Clientes","Barbero","Banco W","Tecnología","Comunidad"],
+    value:"Banco W gestiona la capa financiera de la lealtad: cada punto es una oportunidad." },
+  { id:"empleados", icon:"✂️", name:"Empleados / Estilistas", role:"Talento", color:"#26C4CC",
+    desc:"Talento operativo del negocio. Su calidad determina la reputación del salón.",
+    links:["Barbero","Clientes","Capacitación"],
+    value:"Ofrecemos créditos de nómina y microseguros para formalizar y retener talento." }
+];
+
+const services = [
+  { icon:"💇", name:"Corte de cabello", price:"$25,000" },
+  { icon:"🧔", name:"Arreglo de barba", price:"$15,000" },
+  { icon:"✨", name:"Corte + Barba", price:"$35,000" },
+  { icon:"💆", name:"Lavado y estilo", price:"$20,000" },
+  { icon:"👶", name:"Corte infantil", price:"$18,000" },
+  { icon:"🎨", name:"Diseño y tintura", price:"$45,000" }
+];
+
+const barbers = [
+  { name:"Carlos M.", avatar:"👨", specialty:"Corte clásico", color:"#FF6900", rating:4.8, community:"aliado" },
+  { name:"Andrés G.", avatar:"🧔", specialty:"Barba y bigote", color:"#00B1BB", rating:4.9, community:"aliado" },
+  { name:"Miguel R.", avatar:"👨", specialty:"Corte moderno", color:"#26C4CC", rating:4.7, community:"aliado" },
+  { name:"Jorge P.", avatar:"👱", specialty:"Diseños", color:"#FF6900", rating:4.6, community:"aliado" },
+  { name:"David L.", avatar:"👨", specialty:"Corte + Barba", color:"#00B1BB", rating:4.9, community:"aliado" },
+  { name:"Santiago H.", avatar:"🧔", specialty:"Estilo urbano", color:"#26C4CC", rating:4.8, community:"aliado" }
+];
+
+const commMembers = [
+  { name:"Carlos M.", avatar:"👨", role:"Corte clásico", badge:"aliado", central:false,
+    photo:"💈", score:"4.8", reviews:"124 reseñas", address:"Cra 5 #15-28, Prado, Cali" },
+  { name:"Andrés G.", avatar:"🧔", role:"Barba experto", badge:"aliado", central:false,
+    photo:"✂️", score:"4.9", reviews:"203 reseñas", address:"Av 2N #10-45, Versalles, Cali" },
+  { name:"Miguel R.", avatar:"👨", role:"Corte moderno", badge:"aliado", central:false,
+    photo:"💇", score:"4.7", reviews:"98 reseñas", address:"Cra 8 #25-12, San Antonio, Cali" },
+  { name:"Jorge P.", avatar:"👱", role:"Diseñador", badge:"aliado", central:false,
+    photo:"🎨", score:"4.6", reviews:"87 reseñas", address:"Cra 1 #5-60, Normandía, Cali" },
+  { name:"David L.", avatar:"👨", role:"Corte + Barba", badge:"aliado", central:false,
+    photo:"🧔", score:"4.9", reviews:"276 reseñas", address:"Cra 100 #5-90, Ciudad Jardín, Cali" },
+  { name:"Santiago H.", avatar:"🧔", role:"Estilo urbano", badge:"aliado", central:false,
+    photo:"💈", score:"4.8", reviews:"198 reseñas", address:"Cra 122 #15-30, Valle del Lili, Cali" },
+  { name:"Banco W", avatar:"🏦", role:"Aliado financiero", badge:"aliado", central:true,
+    photo:"🏦", score:"5.0", reviews:"—", address:"Av 3N #20-50, Centro, Cali" },
+  { name:"SENA", avatar:"🎓", role:"Capacitación", badge:"aliado", central:false,
+    photo:"🎓", score:"4.9", reviews:"—", address:"Cra 1 #5-80, Salomia, Cali" },
+  { name:"Proveedores", avatar:"📦", role:"Insumos", badge:"aliado", central:false,
+    photo:"📦", score:"4.5", reviews:"—", address:"Cra 13 #30-40, San Nicolás, Cali" }
+];
+
+const dirCategories = [
+  { id:"clientes", icon:"👥", label:"Clientes Frecuentes", color:"#26C4CC" },
+  { id:"barberos", icon:"💈", label:"Barberos Aliados", color:"#FF6900" },
+  { id:"proveedores", icon:"📦", label:"Proveedores", color:"#00B1BB" },
+  { id:"capacitacion", icon:"🎓", label:"Capacitación", color:"#26C4CC" },
+  { id:"bancoW", icon:"🏦", label:"Contactos Banco W", color:"#FF6900" }
+];
+
+const dirData = {
+  clientes: [
+    { name:"Alejandro R.", avatar:"👨", detail:"15 visitas · Corte clásico", points:"2,300 pts", tag:"★ Frecuente", tagColor:"gold" },
+    { name:"María F.", avatar:"👩", detail:"12 visitas · Lavado y estilo", points:"1,850 pts", tag:"★ Frecuente", tagColor:"gold" },
+    { name:"Juan D.", avatar:"🧔", detail:"9 visitas · Arreglo de barba", points:"1,200 pts", tag:"★ Leal", tagColor:"teal" },
+    { name:"Camila G.", avatar:"👩‍🦰", detail:"8 visitas · Corte + Barba", points:"980 pts", tag:"★ Leal", tagColor:"teal" },
+    { name:"Pedro M.", avatar:"👱", detail:"7 visitas · Corte moderno", points:"740 pts", tag:"Regular", tagColor:"purple" },
+    { name:"Valentina L.", avatar:"👩‍🦱", detail:"6 visitas · Diseño y tintura", points:"620 pts", tag:"Regular", tagColor:"purple" }
+  ],
+  barberos: [
+    { name:"Carlos M.", avatar:"👨", detail:"Corte clásico · 4.8 ★", points:"Miembro desde 2024", tag:"Aliado", tagColor:"gold" },
+    { name:"Andrés G.", avatar:"🧔", detail:"Barba y bigote · 4.9 ★", points:"+50 citas", tag:"Aliado", tagColor:"gold" },
+    { name:"Miguel R.", avatar:"👨", detail:"Corte moderno · 4.7 ★", points:"+40 citas", tag:"Aliado", tagColor:"gold" },
+    { name:"Jorge P.", avatar:"👱", detail:"Diseños · 4.6 ★", points:"Certificado", tag:"Aliado", tagColor:"gold" },
+    { name:"David L.", avatar:"👨", detail:"Corte + Barba · 4.9 ★", points:"Instructor", tag:"Aliado", tagColor:"gold" },
+    { name:"Santiago H.", avatar:"🧔", detail:"Estilo urbano · 4.8 ★", points:"Top ventas", tag:"Aliado", tagColor:"gold" }
+  ],
+  proveedores: [
+    { name:"Distribuidora Capilar", avatar:"🏭", detail:"Shampoos, ceras, tintes", points:"% desc. comunidad", tag:"Compra conjunta", tagColor:"teal" },
+    { name:"Proveedor de Herramientas", avatar:"✂️", detail:"Tijeras, máquinas, peines", points:"% desc. aliados", tag:"Descuento", tagColor:"teal" },
+    { name:"Insumos y Cosmética", avatar:"🧴", detail:"Aceites, lociones, geles", points:"% desc. membresía W", tag:"Premium", tagColor:"gold" },
+    { name:"Equipos y Mobiliario", avatar:"🪑", detail:"Sillones, lavacabezas", points:"Crédito Banco W", tag:"Financiable", tagColor:"gold" },
+    { name:"Uniformes y Accesorios", avatar:"👕", detail:"Batas, guantes, toallas", points:"% desc. volumen", tag:"Aliado", tagColor:"purple" }
+  ],
+  capacitacion: [
+    { name:"SENA", avatar:"🎓", detail:"Cursos técnicos gratuitos", points:"Certificación avalada", tag:"Gratuito", tagColor:"teal" },
+    { name:"Academia de Barbería", avatar:"📚", detail:"Corte clásico y moderno", points:"Becas disponibles", tag:"Beca", tagColor:"gold" },
+    { name:"Talleres de Colorimetría", avatar:"🎨", detail:"Tintura, decoloración, mechas", points:"Certificación internacional", tag:"Premium", tagColor:"gold" },
+    { name:"Business Beauty School", avatar:"💼", detail:"Gestión de negocio y finanzas", points:"Convenio Banco W", tag:"Financiable", tagColor:"purple" },
+    { name:"Curso de Manejo de Redes", avatar:"📱", detail:"Marketing digital para barberos", points:"Gratuito para aliados", tag:"Aliado", tagColor:"teal" }
+  ],
+  bancoW: [
+    { name:"Asesoría Microcréditos", avatar:"🏦", detail:"Créditos desde $500K COP", points:"Tasa preferencial", tag:"aliado", tagColor:"gold" },
+    { name:"Educación Financiera", avatar:"📊", detail:"Talleres de ahorro e inversión", points:"Gratuito comunidad", tag:"aliado", tagColor:"teal" },
+    { name:"Seguros para tu negocio", avatar:"🛡️", detail:"Protección para tu barbería", points:"Membresía W", tag:"aliado", tagColor:"gold" },
+    { name:"Línea de Ahorro W", avatar:"💰", detail:"Ahorro programado con renta", points:"Sin costo mensual", tag:"aliado", tagColor:"teal" }
+  ]
+};
+
+let activeDirTab = "clientes";
+
+function renderDirectory() {
+  const tabsContainer = document.getElementById("dirTabs");
+  tabsContainer.innerHTML = "";
+  dirCategories.forEach(cat => {
+    const tab = document.createElement("button");
+    tab.className = "dir-tab" + (cat.id === activeDirTab ? " active" : "");
+    tab.textContent = `${cat.icon} ${cat.label}`;
+    tab.onclick = () => {
+      activeDirTab = cat.id;
+      renderDirectory();
+    };
+    tabsContainer.appendChild(tab);
+  });
+
+  const containers = document.getElementById("dirContainers");
+  containers.innerHTML = "";
+  const grid = document.createElement("div");
+  grid.className = "dir-grid";
+  const items = dirData[activeDirTab] || [];
+  items.forEach(item => {
+    const card = document.createElement("div");
+    card.className = "dir-card";
+    card.innerHTML = `
+      <div class="dc-head">
+        <div class="dc-avatar" style="background:${dirCategories.find(c => c.id === activeDirTab).color}15">${item.avatar}</div>
+        <div>
+          <div class="dc-name">${item.name}</div>
+          <div class="dc-role">${item.detail}</div>
+        </div>
+      </div>
+      <div class="dc-detail">
+        <span>${item.points}</span>
+        <span class="dc-tag ${item.tagColor}">${item.tag}</span>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+  if (items.length === 0) {
+    grid.innerHTML = '<div class="dir-empty">No hay contactos en esta categoría</div>';
+  }
+  containers.appendChild(grid);
+}
+
+renderDirectory();
+
+// ── Ecosystem Cards ──
+const ecoGrid = document.getElementById("ecoGrid");
+actors.forEach(a => {
+  const card = document.createElement("div");
+  card.className = "eco-card" + (a.id === "bancoW" || a.id === "comunidad" ? " highlight" : "");
+  card.innerHTML = `
+    <div class="eco-icon" style="background:${a.color}12;border:1px solid ${a.color}25">${a.icon}</div>
+    <h4>${a.name}</h4>
+    <div class="eco-role">${a.role}</div>
+    <p>${a.desc}</p>
+    <div class="eco-links">${a.links.map(l => `<span>${l}</span>`).join("")}</div>
+    <div class="eco-value">✦ ${a.value}</div>
+  `;
+  ecoGrid.appendChild(card);
+});
+
+// ── Service Grid ──
+const serviceGrid = document.getElementById("serviceGrid");
+let selectedService = null;
+services.forEach((s, i) => {
+  const div = document.createElement("div");
+  div.className = "service-option";
+  div.innerHTML = `<div class="s-icon">${s.icon}</div><div class="s-name">${s.name}</div><div class="s-price">${s.price}</div>`;
+  div.onclick = () => {
+    document.querySelectorAll(".service-option").forEach(d => d.classList.remove("selected"));
+    div.classList.add("selected");
+    selectedService = i;
+  };
+  serviceGrid.appendChild(div);
+});
+
+// ── Barber Grid ──
+const barberGrid = document.getElementById("barberGrid");
+let selectedBarber = null;
+barbers.forEach((b, i) => {
+  const div = document.createElement("div");
+  div.className = "barber-option";
+  div.innerHTML = `
+    <div class="b-head">
+      <div class="b-avatar" style="background:${b.color}15">${b.avatar}</div>
+      <div><div class="b-name">${b.name}</div><div class="b-specialty">${b.specialty}</div></div>
+    </div>
+    <div class="b-stars">${"★".repeat(Math.floor(b.rating))}${b.rating % 1 >= 0.5 ? "½" : ""} ${b.rating}</div>
+  `;
+  div.onclick = () => {
+    document.querySelectorAll(".barber-option").forEach(d => d.classList.remove("selected"));
+    div.classList.add("selected");
+    selectedBarber = i;
+  };
+  barberGrid.appendChild(div);
+});
+
+// ── Community Network ──
+const commNetwork = document.getElementById("commNetwork");
+commMembers.forEach((m, i) => {
+  const div = document.createElement("div");
+  div.className = "comm-member" + (m.central ? " central" : "");
+  div.innerHTML = `
+    <div class="cm-avatar">${m.avatar}</div>
+    <div class="cm-name">${m.name}</div>
+    <div class="cm-role">${m.role}</div>
+    <div class="cm-badge ${m.badge === "aliado" ? "aliado" : ""}">${m.badge}</div>
+  `;
+  div.onclick = () => openMemberModal(i);
+  commNetwork.appendChild(div);
+});
+
+function openMemberModal(idx) {
+  const m = commMembers[idx];
+  document.getElementById("modalPhoto").textContent = m.photo;
+  document.getElementById("modalPhoto").style.background = m.photo === "🏦" ? "rgba(255,105,0,0.12)" : "rgba(0,177,187,0.08)";
+  document.getElementById("modalPhoto").style.border = "1px solid rgba(255,255,255,0.04)";
+  document.getElementById("modalName").textContent = m.name;
+  document.getElementById("modalRole").textContent = m.role;
+  document.getElementById("modalScore").textContent = "★ " + m.score;
+  document.getElementById("modalReviews").textContent = m.reviews;
+  document.getElementById("modalAddress").textContent = m.address;
+  document.getElementById("memberModal").classList.add("open");
+}
+
+function closeMemberModal() {
+  document.getElementById("memberModal").classList.remove("open");
+}
+
+function openJoinModal() {
+  document.getElementById("joinModal").classList.add("open");
+}
+
+function closeJoinModal() {
+  document.getElementById("joinModal").classList.remove("open");
+}
+
+// Cerrar modales al hacer clic fuera
+document.getElementById("memberModal").onclick = (e) => {
+  if (e.target === e.currentTarget) closeMemberModal();
+};
+document.getElementById("joinModal").onclick = (e) => {
+  if (e.target === e.currentTarget) closeJoinModal();
+};
+
+// ── Booking Steps ──
+let currentStep = 0;
+const totalSteps = 4;
+
+function updateSteps() {
+  document.querySelectorAll(".booking-step").forEach((el, i) => el.classList.toggle("active", i === currentStep));
+  document.querySelectorAll(".step-dot").forEach((el, i) => {
+    el.className = "step-dot" + (i < currentStep ? " done" : i === currentStep ? " active" : "");
+  });
+  const labels = ["¿Qué servicio necesitas?", "Elige tu barbero", "Fecha y hora", "Confirmación"];
+  document.getElementById("stepLabel").innerHTML = `<strong>Paso ${currentStep + 1} de ${totalSteps}:</strong> ${labels[currentStep]}`;
+}
+
+function nextStep(from) {
+  if (from === 0 && selectedService === null) { alert("Por favor selecciona un servicio"); return; }
+  if (from === 1 && selectedBarber === null) { alert("Por favor selecciona un barbero"); return; }
+  if (from === 2) {
+    const date = document.getElementById("bookingDate").value;
+    const time = document.getElementById("bookingTime").value;
+    if (!date) { alert("Por favor selecciona una fecha"); return; }
+    showConfirmation(date, time);
+  }
+  currentStep++;
+  updateSteps();
+}
+
+function prevStep(to) {
+  currentStep = to;
+  updateSteps();
+}
+
+function showConfirmation(date, time) {
+  const s = services[selectedService];
+  const b = barbers[selectedBarber];
+  const impactTexts = [
+    "Al agendar este corte, apoyas a un microempresario aliado, a sus proveedores locales de insumos y al programa de fidelización de la comunidad Ruta W. Banco W respalda cada transacción.",
+    "Tu cita genera impacto directo: el barbero accede a créditos preferenciales, la comunidad fortalece sus compras conjuntas y tú acumulas puntos en el programa de fidelización.",
+    "Cada agendamiento impulsa el ecosistema: parte de tu pago contribuye a programas de capacitación gratuita para nuevos barberos y a la central de compras de la comunidad."
+  ];
+  document.getElementById("confDetails").innerHTML = `
+    <div class="row"><span class="lbl">Servicio</span><span class="val">${s.icon} ${s.name}</span></div>
+    <div class="row"><span class="lbl">Barbero</span><span class="val">${b.avatar} ${b.name}</span></div>
+    <div class="row"><span class="lbl">Fecha</span><span class="val">${new Date(date).toLocaleDateString("es-CO", { weekday:"long", day:"numeric", month:"long" })}</span></div>
+    <div class="row"><span class="lbl">Hora</span><span class="val">${time}</span></div>
+    <div class="row"><span class="lbl">Valor</span><span class="val" style="color:var(--w-orange);font-weight:700">${s.price}</span></div>
+  `;
+  document.getElementById("confImpact").textContent = impactTexts[Math.floor(Math.random() * impactTexts.length)];
+}
+
+function resetBooking() {
+  selectedService = null;
+  selectedBarber = null;
+  document.querySelectorAll(".service-option, .barber-option").forEach(d => d.classList.remove("selected"));
+  document.getElementById("bookingDate").value = "";
+  currentStep = 0;
+  updateSteps();
+}
+
+// Set default date to tomorrow
+const tomorrow = new Date();
+tomorrow.setDate(tomorrow.getDate() + 1);
+document.getElementById("bookingDate").value = tomorrow.toISOString().split("T")[0];
+
+// ── QR code ──
+document.getElementById("qrCode").src = "https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=" + encodeURIComponent(window.location.href);
+
+// ── Mobile toggle ──
+document.getElementById("mobileToggle").onclick = () => {
+  document.getElementById("navLinks").classList.toggle("open");
+};
+</script>
+</body>
+</html>
