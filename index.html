@@ -989,18 +989,38 @@
 <div class="modal-overlay" id="joinModal">
   <div class="modal-card">
     <button class="modal-close" onclick="closeJoinModal()">✕</button>
-    <div style="font-size:40px;margin-bottom:12px;">🤝</div>
-    <h3 style="font-size:18px;font-weight:700;margin-bottom:8px;">Únete a la comunidad Ruta W</h3>
-    <p style="font-size:13px;color:rgba(255,255,255,0.35);margin-bottom:16px;">Requisitos mínimos para ser parte de la red de barberos aliados de Banco W:</p>
-    <ul class="req-list">
-      <li><span class="req-check">✓</span><span><strong>Ser microempresario del sector belleza</strong><br>Barbería, peluquería, estética, spa, manicure o similar.</span></li>
-      <li><span class="req-check">✓</span><span><strong>Tener negocio formal o en formalización</strong><br>Registro mercantil o compromiso de formalización en los primeros 6 meses.</span></li>
-      <li><span class="req-check">✓</span><span><strong>Residir en Cali o área metropolitana</strong><br>La comunidad opera en Cali, Jamundí, Palmira y Yumbo.</span></li>
-      <li><span class="req-check">✓</span><span><strong>Participar en capacitaciones</strong><br>Compromiso de asistir a al menos 2 talleres al año de la agenda Ruta W.</span></li>
-      <li><span class="req-check">✓</span><span><strong>Mantener una puntuación promedio ≥ 4.0</strong><br>Basado en las reseñas de tus clientes en la plataforma.</span></li>
-      <li><span class="req-check">✓</span><span><strong>Ser referido por un aliado activo</strong><br>Dos miembros activos de la comunidad deben avalar tu ingreso.</span></li>
-    </ul>
-    <button class="join-btn" onclick="closeJoinModal()" style="width:100%;text-align:center;justify-content:center;">Entendido, gracias</button>
+    <div id="joinStep1">
+      <div style="font-size:40px;margin-bottom:12px;">🤝</div>
+      <h3 style="font-size:18px;font-weight:700;margin-bottom:8px;">Únete a la comunidad Ruta W</h3>
+      <p style="font-size:13px;color:rgba(255,255,255,0.35);margin-bottom:16px;">Requisitos mínimos para ser parte de la red de barberos aliados de Banco W:</p>
+      <ul class="req-list">
+        <li><span class="req-check">✓</span><span><strong>Ser microempresario del sector belleza</strong><br>Barbería, peluquería, estética, spa, manicure o similar.</span></li>
+        <li><span class="req-check">✓</span><span><strong>Tener negocio formal o en formalización</strong><br>Registro mercantil o compromiso de formalización en los primeros 6 meses.</span></li>
+        <li><span class="req-check">✓</span><span><strong>Residir en Cali o área metropolitana</strong><br>La comunidad opera en Cali, Jamundí, Palmira y Yumbo.</span></li>
+        <li><span class="req-check">✓</span><span><strong>Participar en capacitaciones</strong><br>Compromiso de asistir a al menos 2 talleres al año de la agenda Ruta W.</span></li>
+        <li><span class="req-check">✓</span><span><strong>Mantener una puntuación promedio ≥ 4.0</strong><br>Basado en las reseñas de tus clientes en la plataforma.</span></li>
+        <li><span class="req-check">✓</span><span><strong>Ser referido por un aliado activo</strong><br>Dos miembros activos de la comunidad deben avalar tu ingreso.</span></li>
+      </ul>
+      <button class="join-btn" onclick="showJoinStep2()" style="width:100%;text-align:center;justify-content:center;">Seguir →</button>
+    </div>
+    <div id="joinStep2" style="display:none;">
+      <div style="font-size:40px;margin-bottom:12px;">📋</div>
+      <h3 style="font-size:18px;font-weight:700;margin-bottom:8px;">Formulario de inscripción</h3>
+      <p style="font-size:13px;color:rgba(255,255,255,0.35);margin-bottom:16px;">Déjanos tus datos y uno de nuestros asesores te contactará.</p>
+      <form id="joinForm" onsubmit="submitJoinForm(event)" style="display:flex;flex-direction:column;gap:12px;">
+        <input type="text" name="nombre" placeholder="Nombre completo" required style="width:100%;padding:12px 16px;border-radius:12px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.04);color:var(--w-white);font-size:14px;font-family:'Inter',sans-serif;outline:none;">
+        <input type="email" name="email" placeholder="Correo electrónico" required style="width:100%;padding:12px 16px;border-radius:12px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.04);color:var(--w-white);font-size:14px;font-family:'Inter',sans-serif;outline:none;">
+        <input type="tel" name="telefono" placeholder="Teléfono / WhatsApp" required style="width:100%;padding:12px 16px;border-radius:12px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.04);color:var(--w-white);font-size:14px;font-family:'Inter',sans-serif;outline:none;">
+        <input type="text" name="negocio" placeholder="Nombre de tu negocio" style="width:100%;padding:12px 16px;border-radius:12px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.04);color:var(--w-white);font-size:14px;font-family:'Inter',sans-serif;outline:none;">
+        <button type="submit" class="join-btn" style="width:100%;text-align:center;justify-content:center;margin-top:4px;">Enviar</button>
+      </form>
+    </div>
+    <div id="joinStep3" style="display:none;">
+      <div style="font-size:50px;margin-bottom:12px;text-align:center;">✅</div>
+      <h3 style="font-size:18px;font-weight:700;margin-bottom:8px;text-align:center;">¡Gracias por tu interés!</h3>
+      <p style="font-size:14px;color:rgba(255,255,255,0.5);text-align:center;margin-bottom:16px;">Uno de nuestros asesores lo contactará.</p>
+      <button class="join-btn" onclick="closeJoinModal()" style="width:100%;text-align:center;justify-content:center;">Cerrar</button>
+    </div>
   </div>
 </div>
 
@@ -1955,6 +1975,21 @@ function openJoinModal() {
 
 function closeJoinModal() {
   document.getElementById("joinModal").classList.remove("open");
+  document.getElementById("joinStep1").style.display = "block";
+  document.getElementById("joinStep2").style.display = "none";
+  document.getElementById("joinStep3").style.display = "none";
+  document.getElementById("joinForm").reset();
+}
+
+function showJoinStep2() {
+  document.getElementById("joinStep1").style.display = "none";
+  document.getElementById("joinStep2").style.display = "block";
+}
+
+function submitJoinForm(e) {
+  e.preventDefault();
+  document.getElementById("joinStep2").style.display = "none";
+  document.getElementById("joinStep3").style.display = "block";
 }
 
 // Cerrar modales al hacer clic fuera
