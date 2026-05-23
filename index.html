@@ -118,14 +118,13 @@
   #hero .hero-actions { display: flex; gap: 12px; }
 
   #hero .hero-actions .btn-primary {
-    background: linear-gradient(135deg, var(--w-blue), var(--w-orange));
-    color: #fff; padding: 14px 32px; border-radius: 100px;
+    background: var(--w-orange); color: #fff; padding: 14px 32px; border-radius: 100px;
     font-weight: 700; font-size: 14px; border: none; cursor: pointer;
-    transition: transform 0.3s; text-decoration: none; display: inline-flex;
+    transition: transform 0.3s, background 0.3s; text-decoration: none; display: inline-flex;
     align-items: center; gap: 8px;
   }
 
-  #hero .hero-actions .btn-primary:hover { transform: scale(1.03); }
+  #hero .hero-actions .btn-primary:hover { transform: scale(1.03); background: var(--w-orange-dark); }
 
   #hero .hero-actions .btn-secondary {
     background: rgba(0,177,187,0.15); color: var(--w-white);
@@ -573,11 +572,10 @@
   .booking-card .btn-next:hover { background: rgba(255,105,0,0.3); }
 
   .booking-card .btn-confirm {
-    background: linear-gradient(135deg, var(--w-blue), var(--w-orange));
-    color: #fff;
+    background: var(--w-orange); color: #fff;
   }
 
-  .booking-card .btn-confirm:hover { transform: scale(1.01); }
+  .booking-card .btn-confirm:hover { transform: scale(1.01); background: var(--w-orange-dark); }
 
   .booking-card .btn-back {
     background: none; border: none; color: rgba(255,255,255,0.3);
@@ -735,6 +733,17 @@
     padding: 12px 16px; background: rgba(0,177,187,0.06); border-radius: 12px;
     border: 1px solid rgba(0,177,187,0.1); margin-bottom: 12px;
   }
+  .modal-reviews-toggle { margin-top: 0; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.06); width:100%; }
+  .modal-reviews-toggle .toggle-hint { font-size: 11px; color: var(--w-orange); cursor: pointer; font-weight: 600; user-select: none; text-align:center; }
+  .modal-reviews-toggle .toggle-hint:hover { color: var(--w-orange-dark); }
+  .modal-reviews-toggle .rv-list { display: none; margin-top: 10px; }
+  .modal-reviews-toggle.open .rv-list { display: block; }
+  .modal-reviews-toggle .rv-item { padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
+  .modal-reviews-toggle .rv-item:last-child { border-bottom: none; }
+  .modal-reviews-toggle .rv-header { display: flex; justify-content: space-between; align-items: center; font-size: 12px; }
+  .modal-reviews-toggle .rv-name { font-weight: 600; color: rgba(255,255,255,0.7); }
+  .modal-reviews-toggle .rv-stars { color: var(--w-orange); font-size: 11px; }
+  .modal-reviews-toggle .rv-text { font-size: 12px; color: rgba(255,255,255,0.45); margin-top: 2px; line-height: 1.4; }
 
   /* ── Rating Explanation Section ── */
   #rating-explanation {
@@ -980,6 +989,10 @@
       <div class="ms-item"><div class="ms-val" id="modalReviews"></div><div class="ms-lbl">Reseñas</div></div>
     </div>
     <div class="modal-address">📍 <span id="modalAddress"></span></div>
+    <div class="modal-reviews-toggle" id="modalReviewsToggle">
+      <div class="toggle-hint">▼ Ver reseñas</div>
+      <div class="rv-list" id="modalReviewsList"></div>
+    </div>
   </div>
 </div>
 
@@ -1205,7 +1218,7 @@
     <div>
       <div class="hero-badge"><span class="dot"></span> Comunidad de Barberos Aliados</div>
       <h1>El ecosistema que <span class="highlight">impulsa tu negocio</span></h1>
-      <p>Ruta W conecta barberos, estilistas, proveedores, centros de capacitación y Banco W en una red de confianza y crecimiento mutuo. No eres solo un barbero, eres parte de una comunidad.</p>
+      <p>Ruta W conecta barberos, estilistas, proveedores y Banco W en una red de confianza y crecimiento mutuo. No eres solo un barbero, eres parte de una comunidad.</p>
       <div class="hero-actions">
         <a href="#agenda" class="btn-primary">📅 Agenda tu cita</a>
         <a href="#ecosystem" class="btn-secondary">Conoce el ecosistema →</a>
@@ -1782,7 +1795,14 @@ const commMembers = [
   { name:"Santiago H.", avatar:"🧔", role:"Estilo urbano", badge:"aliado", central:false,
     photo:"💈", score:"4.8", reviews:"198 reseñas", address:"Cra 122 #15-30, Valle del Lili, Cali" },
   { name:"Sandra M.", avatar:"👩", role:"Barbería La Elegancia", badge:"aliado", central:false,
-    photo:"✂️", score:"4.9", reviews:"312 reseñas", address:"Cra 66 #10-40, Santa Rita, Cali" },
+    photo:"✂️", score:"4.9", reviews:"312 reseñas", address:"Cra 66 #10-40, Santa Rita, Cali",
+    reviewsList:[
+      { name:"Carolina", rating:5, text:"Sandra es increíble, me dejó el cabello espectacular. Muy recomendada." },
+      { name:"Lucía", rating:5, text:"La mejor barbería de Santa Rita. Atención profesional y ambiente agradable." },
+      { name:"Martha", rating:4, text:"Buen servicio, volvería sin duda. Los precios son justos." },
+      { name:"Daniela", rating:5, text:"Me encantó el resultado. Sandra sabe exactamente lo que quiere una." },
+      { name:"Valentina", rating:5, text:"Súper recomendada. Hace milagros con el cabello rizado." }
+    ] },
   { name:"Banco W", avatar:"🏦", role:"Aliado financiero", badge:"aliado", central:true,
     photo:"🏦", score:"5.0", reviews:"—", address:"Av 3N #20-50, Centro, Cali" },
   { name:"SENA", avatar:"🎓", role:"Capacitación", badge:"aliado", central:false,
@@ -1962,12 +1982,33 @@ function openMemberModal(idx) {
   document.getElementById("modalScore").textContent = "★ " + m.score;
   document.getElementById("modalReviews").textContent = m.reviews;
   document.getElementById("modalAddress").textContent = m.address;
+  const toggle = document.getElementById("modalReviewsToggle");
+  const list = document.getElementById("modalReviewsList");
+  if (m.reviewsList && m.reviewsList.length > 0) {
+    toggle.style.display = "block";
+    toggle.classList.remove("open");
+    list.innerHTML = m.reviewsList.map(rv =>
+      '<div class="rv-item"><div class="rv-header"><span class="rv-name">' + rv.name + '</span><span class="rv-stars">' + '★'.repeat(rv.rating) + '☆'.repeat(5 - rv.rating) + '</span></div><div class="rv-text">' + rv.text + '</div></div>'
+    ).join('');
+    document.querySelector(".toggle-hint").textContent = "▼ Ver reseñas (" + m.reviewsList.length + ")";
+  } else {
+    toggle.style.display = "none";
+  }
   document.getElementById("memberModal").classList.add("open");
 }
 
 function closeMemberModal() {
   document.getElementById("memberModal").classList.remove("open");
 }
+
+document.getElementById("modalReviewsToggle").addEventListener("click", function() {
+  this.classList.toggle("open");
+  const hint = this.querySelector(".toggle-hint");
+  const count = this.querySelectorAll(".rv-item").length;
+  hint.textContent = this.classList.contains("open")
+    ? "▲ Ocultar reseñas"
+    : "▼ Ver reseñas (" + count + ")";
+});
 
 function openJoinModal() {
   document.getElementById("joinModal").classList.add("open");
